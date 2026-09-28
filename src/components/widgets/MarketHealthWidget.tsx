@@ -32,15 +32,12 @@ export function MarketHealthWidget({ className }: { className?: string }) {
         ) : (
           <ul className="divide-y divide-border-subtle/60" aria-label="Market health components">
             {rows.map((c) => (
-              <li key={c.id} className="grid grid-cols-[1fr_auto] items-center gap-x-3 py-1.5 sm:grid-cols-[1fr_auto_96px_auto]">
+              <li key={c.id} className="grid grid-cols-[minmax(0,1fr)_auto] items-center gap-x-3 py-1.5 sm:grid-cols-[minmax(92px,1fr)_auto_64px]">
                 <span className="truncate text-xs text-fg-secondary" title={c.detail}>
                   {c.name}
                 </span>
                 <Badge tone={TONE_BADGE[c.tone]}>{c.condition}</Badge>
                 <span className="hidden sm:block">{c.percentile !== null ? <PercentileBar value={c.percentile} /> : <span className="text-2xs text-fg-muted">—</span>}</span>
-                <span className="hidden sm:block">
-                  <TrendArrow trend={c.trend} note={c.trendNote} />
-                </span>
               </li>
             ))}
           </ul>

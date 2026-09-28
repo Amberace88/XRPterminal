@@ -33,7 +33,7 @@ export function decodeCurrency(code: string): string {
   if (!code) return "";
   if (code.length === 3) return code;
   if (/^[0-9A-F]{40}$/i.test(code)) {
-    if (code.startsWith("02")) return "LP Token";
+    if (code.startsWith("03")) return "LP Token";
     let out = "";
     for (let i = 0; i < 40; i += 2) {
       const c = parseInt(code.slice(i, i + 2), 16);

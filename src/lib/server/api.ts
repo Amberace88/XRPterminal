@@ -5,7 +5,11 @@ import type { ZodType } from "zod";
 /** Structured API responses (spec §147) — never leak stack traces. */
 export function ok<T>(data: T, init?: { status?: number; cacheSeconds?: number; headers?: Record<string, string> }) {
   const headers: Record<string, string> = { ...(init?.headers ?? {}) };
-  if (init?.cacheSeconds) headers["Cache-Control"] = `public, s-maxage=${init.cacheSeconds}, stale-while-revalidate=${init.cacheSeconds * 4}`;
+  if (init?.cacheSeconds) {
+    headers["Cache-Control"] = `public, s-maxage=${init.cacheSeconds}, stale-while-revalidate=${init.cacheSeconds * 4}`;
+    // Netlify's CDN must key cached API responses on the query string (pair, timeframe, …)
+    headers["Netlify-Vary"] = "query";
+  }
   else headers["Cache-Control"] = headers["Cache-Control"] ?? "no-store";
   return NextResponse.json({ ok: true, data }, { status: init?.status ?? 200, headers });
 }

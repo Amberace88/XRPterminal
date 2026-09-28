@@ -38,7 +38,8 @@ export function OrderBook({
   const bids = useMemo(() => cumulative(book?.bids ?? []), [book]);
   const asks = useMemo(() => cumulative(book?.asks ?? []), [book]);
   const maxCum = Math.max(bids[bids.length - 1]?.cum ?? 0, asks[asks.length - 1]?.cum ?? 0) || 1;
-  const priceDigits = quote === "BTC" || quote === "ETH" ? 8 : undefined;
+  // Kraken XRP/USD tick size is 0.00001 — show 5 decimals so distinct levels never look identical.
+  const priceDigits = quote === "BTC" || quote === "ETH" ? 8 : 5;
   const fp = (v: number | null) => formatPrice(v, quote, priceDigits);
 
   return (
