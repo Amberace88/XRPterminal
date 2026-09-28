@@ -1,0 +1,23 @@
+name: CI
+on:
+  push:
+    branches: [main]
+  pull_request:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm run typecheck
+      - run: npm test
+      - run: npm run build
+        env:
+          NEXT_TELEMETRY_DISABLED: "1"
+      - name: Secret leak check
+        run: |
+          if grep -rEn "sk_live_|sk-ant-|service_role" --include=*.ts --include=*.tsx src | grep -v "SUPABASE_SERVICE_ROLE_KEY\|service_role key\|service role" ; then echo "Possible secret in source"; exit 1; fi

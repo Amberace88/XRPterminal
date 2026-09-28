@@ -5,6 +5,7 @@ import "./globals.css";
 import { AppProviders } from "@/components/providers/AppProviders";
 import { SITE } from "@/lib/config";
 import { CookieConsent } from "@/components/legal/CookieConsent";
+import { RegisterSW } from "@/components/pwa/RegisterSW";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE.url),
@@ -56,6 +57,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <AppProviders>
           {children}
           <CookieConsent />
+          <RegisterSW />
         </AppProviders>
       </body>
     </html>
