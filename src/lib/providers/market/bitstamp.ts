@@ -70,21 +70,20 @@ export const bitstamp: MarketDataProvider = {
     const out: Candle[] = [];
     let cursor = Math.floor(start / 1000);
     const endS = Math.floor(end / 1000);
-    // paginate 1000 candles per request
-    for (let i = 0; i < 20 && cursor < endS; i++) {
+    // Paginate by time window: Bitstamp returns the candles inside [start, start + 1000·step),
+    // so a window can hold fewer than 1000 rows (e.g. before a pair was listed). Always advance
+    // the cursor by the full window instead of stopping on a short page.
+    for (let i = 0; i < 30 && cursor < endS; i++) {
       const url = `${BASE}/ohlc/${p}/?step=${step}&limit=1000&start=${cursor}`;
       const res = await fetchJson<BsOhlc>("bitstamp", url, { revalidate: req.timeframe === "1D" ? 3600 : 60, timeoutMs: 12000 });
       const rows = res?.data?.ohlc ?? [];
-      if (!rows.length) break;
       for (const r of rows) {
         const t = Number(r.timestamp) * 1000;
         if (t < start || t >= end) continue;
         out.push({ t, o: Number(r.open), h: Number(r.high), l: Number(r.low), c: Number(r.close), v: Number(r.volume) });
       }
-      const last = Number(rows[rows.length - 1].timestamp);
-      if (last <= cursor) break;
-      cursor = last + step;
-      if (rows.length < 1000) break;
+      const last = rows.length ? Number(rows[rows.length - 1].timestamp) : cursor;
+      cursor = Math.max(last + step, cursor + 1000 * step);
     }
     return out;
   },
