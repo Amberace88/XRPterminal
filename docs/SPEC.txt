@@ -1,0 +1,6674 @@
+================================================================================
+XRP TERMINAL
+FINAL EDITION — MASTER PRODUCT + FULL MVP / V1 / PRODUCTION BUILD SPECIFICATION
+================================================================================
+
+PRODUCT:
+XRP TERMINAL
+
+DOMAIN:
+xrpterminal.com
+
+TAGLINE:
+SEE BEYOND THE PRICE.
+
+PRODUCT TYPE:
+Professional XRP-native intelligence, analytics, portfolio, XRPL intelligence,
+AI research, social intelligence and simulated trading platform.
+
+CORE PRINCIPLE:
+BUILD A REAL COMMERCIAL PRODUCT.
+DO NOT BUILD A TOY.
+DO NOT BUILD A STATIC DEMO.
+DO NOT BUILD A FAKE DASHBOARD.
+DO NOT USE FAKE DATA WHERE REAL DATA IS AVAILABLE.
+DO NOT MARK FEATURES AS COMPLETE WHEN THEY ARE NOT ACTUALLY FUNCTIONAL.
+
+================================================================================
+00. MASTER DEVELOPMENT INSTRUCTION
+================================================================================
+
+This document is the authoritative master specification for XRP Terminal.
+
+The coding agent must treat this entire document as one unified product
+specification.
+
+The coding agent must:
+
+1. Inspect the existing repository before changing anything.
+2. Inspect the existing database/schema before creating duplicates.
+3. Inspect all existing environment variables.
+4. Inspect existing authentication.
+5. Inspect existing routes.
+6. Inspect existing components.
+7. Inspect existing API integrations.
+8. Inspect existing styling/design system.
+9. Preserve working functionality unless a change is explicitly required.
+10. Never destroy working functionality simply to implement a new feature.
+11. Reuse existing architecture where appropriate.
+12. Refactor duplicated code when necessary.
+13. Create production-quality modular architecture.
+14. Use real data wherever technically and legally possible.
+15. Use provider abstractions instead of hard-coding one data provider everywhere.
+16. Never fabricate users.
+17. Never fabricate wallets.
+18. Never fabricate balances.
+19. Never fabricate forecasts.
+20. Never fabricate trader performance.
+21. Never fabricate market prices.
+22. Never fabricate XRPL transactions.
+23. Never fabricate news.
+24. Never fabricate source citations.
+25. Never fabricate AI confidence.
+26. Clearly label simulated data.
+27. Clearly label paper trading.
+28. Clearly label external information.
+29. Clearly label model-generated scenarios.
+30. Clearly distinguish historical facts from forecasts.
+31. Clearly distinguish verified data from unverified information.
+32. Build the system so future providers can be added without rewriting the
+    entire application.
+33. Build the database with proper relations, indexes and constraints.
+34. Implement proper authentication and authorization.
+35. Implement Row Level Security wherever Supabase/PostgreSQL architecture
+    requires it.
+36. Never expose server secrets to the browser.
+37. Never expose API keys to users.
+38. Never ask users for seed phrases.
+39. Never ask users for private keys.
+40. Never store private keys or seed phrases.
+41. Never implement crypto custody in the MVP.
+42. Never implement withdrawals in the MVP.
+43. Never implement deposits in the MVP.
+44. Never implement real trade execution in the MVP.
+45. Trade Lab is simulation only.
+46. All financial calculations must be deterministic.
+47. AI must never be the source of truth for numerical calculations.
+48. AI may explain calculations and data.
+49. AI must not invent facts.
+50. Every important external factual claim must have provenance.
+51. Every forecast must have model/version metadata.
+52. Every forecast must be immutable after publication.
+53. Every historical backtest must prevent lookahead bias.
+54. Every simulation must disclose assumptions.
+55. Every chart must handle loading, empty and error states.
+56. Every page must be responsive.
+57. The product must feel like a real premium SaaS application.
+58. The final result must be commercially presentable.
+
+================================================================================
+01. PRODUCT VISION
+================================================================================
+
+XRP Terminal is an independent XRP/XRPL intelligence platform.
+
+The product combines:
+
+- XRP market intelligence
+- XRP Ledger intelligence
+- wallet intelligence
+- portfolio tracking
+- market analytics
+- historical analysis
+- future scenario analysis
+- AI research
+- news intelligence
+- claim verification
+- social intelligence
+- verified trader profiles
+- paper trading
+- historical replay
+- strategy testing
+- trading journal
+- alerts
+- calculators
+- subscription infrastructure
+- affiliate infrastructure
+- administration
+- future API/B2B infrastructure
+
+The product should feel like a combination of:
+
+- Bloomberg-style information density
+- modern fintech UX
+- professional crypto analytics
+- XRPL-native intelligence
+- modern SaaS usability
+
+The product must NOT feel like:
+
+- a meme coin website
+- a casino
+- a gambling platform
+- a neon crypto landing page
+- a generic AI dashboard
+- a fake trading terminal
+- a copy of TradingView
+- a copy of Nansen
+- a copy of CoinStats
+
+It should have its own visual and functional identity.
+
+================================================================================
+02. PRODUCT POSITIONING
+================================================================================
+
+Primary positioning:
+
+"SEE BEYOND THE PRICE."
+
+The product should help users understand:
+
+WHAT IS HAPPENING?
+WHY IS IT HAPPENING?
+WHAT HAS HAPPENED BEFORE?
+WHAT IS CHANGING?
+WHAT DOES THE DATA SUGGEST?
+WHAT SCENARIOS ARE POSSIBLE?
+WHAT SHOULD I WATCH?
+
+The system must not turn those questions into guaranteed predictions.
+
+The product is an intelligence and analytical platform.
+
+================================================================================
+03. NON-CUSTODIAL ARCHITECTURE
+================================================================================
+
+XRP Terminal must remain non-custodial.
+
+The platform must not:
+
+- hold XRP for users
+- hold fiat for users
+- hold crypto for users
+- receive user deposits
+- process withdrawals
+- store seed phrases
+- store private keys
+- sign blockchain transactions on behalf of users
+- execute real trades in the MVP
+
+Users may connect:
+
+- public XRPL addresses
+- supported read-only exchange APIs
+- future supported public blockchain wallets
+- future DeFi data sources
+
+All exchange API integrations must be read-only in the initial version.
+
+Required API permission model:
+
+READ:
+YES
+
+TRADING:
+NO
+
+WITHDRAWALS:
+NO
+
+TRANSFERS:
+NO
+
+PRIVATE KEY:
+NEVER
+
+================================================================================
+04. LEGAL PRODUCT POSITION
+================================================================================
+
+The product should contain clear legal language.
+
+Suggested primary disclaimer:
+
+"XRP Terminal is an independent software and analytics platform. It does not
+hold, custody, buy, sell, transfer or execute transactions in crypto-assets
+on behalf of users. Information, analytics, historical statistics, scenarios
+and model outputs provided by XRP Terminal are for informational and analytical
+purposes only. They do not constitute personalized investment advice, portfolio
+management, a recommendation to buy or sell any crypto-asset, or a guarantee
+of future performance. Historical results do not guarantee future results.
+Crypto-assets are volatile and users may lose some or all of their invested
+capital."
+
+Independent-company statement:
+
+"XRP Terminal is an independent software and analytics platform and is not
+affiliated with, endorsed by, or sponsored by Ripple Labs Inc."
+
+This wording must be reviewed by qualified legal counsel before commercial
+launch.
+
+================================================================================
+05. BRAND
+================================================================================
+
+Brand name:
+
+XRP TERMINAL
+
+Tagline:
+
+SEE BEYOND THE PRICE.
+
+Brand characteristics:
+
+- professional
+- analytical
+- technical
+- institutional
+- modern
+- premium
+- credible
+- data-driven
+- minimal
+- sophisticated
+
+Avoid:
+
+- excessive neon
+- meme aesthetics
+- cartoon graphics
+- casino aesthetics
+- rocket graphics
+- moon graphics
+- fake "1000% profit" claims
+- exaggerated financial promises
+
+================================================================================
+06. LOGO
+================================================================================
+
+Create an original proprietary XRP Terminal visual identity.
+
+Do NOT reproduce Ripple's official logo.
+
+Do NOT create a confusingly similar Ripple mark.
+
+The XRP Terminal symbol should be original and communicate concepts such as:
+
+- X
+- data
+- terminal
+- chart
+- intelligence
+- movement
+- network
+- analytics
+
+Possible visual direction:
+
+abstract geometric X / terminal / graph symbol.
+
+Wordmark:
+
+XRP TERMINAL
+
+The logo must work in:
+
+- dark mode
+- light mode
+- favicon
+- mobile app icon
+- social avatar
+- website header
+- dashboard
+- loading screen
+- email
+- PDF reports
+- share cards
+
+================================================================================
+07. VISUAL DESIGN SYSTEM
+================================================================================
+
+Primary design:
+
+Premium dark fintech/Web3.
+
+Base:
+
+near-black / graphite.
+
+Supporting:
+
+dark charcoal
+soft gray
+white
+restrained cyan accent
+
+Use subtle gradients.
+
+Use glass effects carefully.
+
+Use borders sparingly.
+
+Use shadows subtly.
+
+The interface should have strong information hierarchy.
+
+No excessive glow.
+
+No excessive blur.
+
+No excessive animations.
+
+No visual clutter.
+
+================================================================================
+08. TYPOGRAPHY
+================================================================================
+
+Use a professional modern sans-serif.
+
+Typography hierarchy:
+
+Display:
+large, strong, premium.
+
+H1:
+clear and powerful.
+
+H2:
+section hierarchy.
+
+H3:
+card titles.
+
+Body:
+high readability.
+
+Numbers:
+optimized for financial data.
+
+Tables:
+compact but readable.
+
+Prices:
+high numerical clarity.
+
+Percentages:
+consistent formatting.
+
+Dates:
+consistent localization.
+
+Currency:
+consistent formatting.
+
+================================================================================
+09. DESIGN TOKENS
+================================================================================
+
+Create centralized design tokens.
+
+Required tokens:
+
+--background
+--background-secondary
+--surface
+--surface-hover
+--surface-elevated
+--border
+--border-subtle
+--text-primary
+--text-secondary
+--text-muted
+--accent
+--accent-soft
+--success
+--warning
+--danger
+--info
+
+Do not hard-code colors throughout components.
+
+================================================================================
+10. RESPONSIVE DESIGN
+================================================================================
+
+Desktop must feel like a professional terminal.
+
+Tablet must remain usable.
+
+Mobile must be a first-class experience.
+
+Do not simply shrink desktop.
+
+Mobile navigation:
+
+- bottom navigation where appropriate
+- collapsible sections
+- horizontal card scrolling where useful
+- mobile-friendly chart controls
+- sticky critical actions
+
+Critical information must remain visible.
+
+================================================================================
+11. LANDING PAGE
+================================================================================
+
+Create premium landing page.
+
+Hero:
+
+XRP TERMINAL
+
+SEE BEYOND THE PRICE.
+
+Subheadline explaining:
+
+market intelligence
+XRPL intelligence
+portfolio
+AI research
+historical intelligence
+future scenarios
+paper trading
+
+Primary CTA:
+
+Start Free
+
+Secondary CTA:
+
+Explore Terminal
+
+Landing sections:
+
+1. Hero
+2. Product overview
+3. Market intelligence
+4. XRPL intelligence
+5. Portfolio
+6. AI intelligence
+7. Historical intelligence
+8. Future intelligence
+9. Trade Lab
+10. Social intelligence
+11. Alerts
+12. Pricing
+13. Security
+14. FAQ
+15. Legal
+16. Footer
+
+================================================================================
+12. FREE TIER
+================================================================================
+
+Free plan:
+
+€0
+
+Free users should receive meaningful functionality.
+
+Possible free functionality:
+
+- market overview
+- XRP price
+- basic chart
+- basic historical statistics
+- limited wallet lookup
+- limited alerts
+- basic AI intelligence
+- limited portfolio
+- limited Trade Lab
+- public XRPL explorer
+
+Do not intentionally cripple the free product so severely that it becomes
+useless.
+
+The free tier must demonstrate product value.
+
+================================================================================
+13. PRO
+================================================================================
+
+Suggested:
+
+€9.99/month
+
+Potential functionality:
+
+- expanded portfolio
+- multiple connected accounts
+- advanced analytics
+- more alerts
+- historical intelligence
+- future scenarios
+- AI research
+- advanced XRPL analytics
+- Trade Lab
+- strategy tools
+- social intelligence
+- trader tracking
+- advanced reports
+
+================================================================================
+14. PRO+
+================================================================================
+
+Suggested:
+
+€19.99/month
+
+Potential functionality:
+
+- unlimited connected accounts
+- advanced analytics
+- advanced XRPL intelligence
+- advanced forecasts
+- advanced AI usage
+- advanced alerts
+- advanced Trade Lab
+- advanced replay
+- strategy lab
+- advanced social intelligence
+- advanced research
+- premium reports
+
+Exact pricing may be adjusted after market testing.
+
+================================================================================
+15. ONBOARDING
+================================================================================
+
+Onboarding should be fast.
+
+Step 1:
+Create account.
+
+Step 2:
+Choose interests.
+
+Examples:
+
+- XRP market
+- XRPL
+- portfolio
+- trading simulation
+- whales
+- news
+- AI intelligence
+- historical research
+
+Step 3:
+Optional public wallet connection.
+
+Step 4:
+Optional alert setup.
+
+Step 5:
+Show dashboard.
+
+Do not force users to connect a wallet.
+
+================================================================================
+16. AUTHENTICATION
+================================================================================
+
+Support:
+
+- email/password
+- magic link where appropriate
+- OAuth where configured
+
+Implement:
+
+- email verification
+- password reset
+- session management
+- secure cookies
+- rate limiting
+- login protection
+- account deletion
+- GDPR data controls
+
+================================================================================
+17. USER PROFILE
+================================================================================
+
+User profile fields:
+
+id
+email
+display_name
+avatar
+timezone
+locale
+plan
+subscription_status
+created_at
+updated_at
+
+Preferences:
+
+- currency
+- language
+- timezone
+- notification preferences
+- chart preferences
+- privacy settings
+- social visibility
+- AI preferences
+
+================================================================================
+18. USER SETTINGS
+================================================================================
+
+Settings sections:
+
+Account
+Security
+Notifications
+Appearance
+Language
+Currency
+Connected Accounts
+Privacy
+Social
+Billing
+Data Export
+Delete Account
+
+================================================================================
+19. DASHBOARD
+================================================================================
+
+Dashboard is the main command center.
+
+Required modules:
+
+1. XRP price
+2. 24h change
+3. market stats
+4. market regime
+5. risk level
+6. portfolio summary
+7. wallet summary
+8. XRPL activity
+9. whales
+10. smart money
+11. exchange flows
+12. news
+13. AI brief
+14. alerts
+15. future scenarios
+16. watchlist
+17. Trade Lab snapshot
+
+Dashboard should be customizable.
+
+Users should be able to reorder widgets.
+
+================================================================================
+20. MARKET DATA
+================================================================================
+
+Market page:
+
+- XRP/USD
+- XRP/EUR
+- XRP/BTC
+- XRP/ETH
+- volume
+- market capitalization
+- circulating supply where reliable
+- liquidity metrics where available
+- volatility
+- price history
+
+Provider abstraction required.
+
+Example architecture:
+
+MarketDataProvider
+
+implementations:
+
+ProviderA
+ProviderB
+ProviderC
+
+Never hard-code provider logic into UI components.
+
+================================================================================
+21. REAL-TIME DATA
+================================================================================
+
+Use WebSocket or appropriate streaming technology where available.
+
+Real-time updates:
+
+- price
+- bid
+- ask
+- volume
+- trades where available
+- order book where available
+- XRPL events
+
+If real-time provider is unavailable:
+
+clearly display last update time.
+
+Never pretend stale data is live.
+
+================================================================================
+22. DATA FRESHNESS
+================================================================================
+
+Every important data object should have:
+
+source
+provider
+timestamp
+fetched_at
+updated_at
+data_age
+status
+
+Possible status:
+
+LIVE
+RECENT
+STALE
+UNAVAILABLE
+
+UI should make data freshness visible where relevant.
+
+================================================================================
+23. MARKET REGIME
+================================================================================
+
+Implement market regime engine.
+
+Possible states:
+
+TRENDING UP
+TRENDING DOWN
+RANGE
+HIGH VOLATILITY
+LOW VOLATILITY
+TRANSITION
+UNKNOWN
+
+Regime calculation must be based on measurable inputs.
+
+Potential inputs:
+
+- trend
+- moving averages
+- volatility
+- ATR
+- price structure
+- volume
+- momentum
+- correlation
+- market breadth where available
+
+Do not claim that regime classification guarantees future direction.
+
+================================================================================
+24. RISK ENGINE
+================================================================================
+
+Risk classification:
+
+LOW
+MODERATE
+ELEVATED
+HIGH
+
+Risk score should be calculated from measurable inputs.
+
+Potential inputs:
+
+- volatility
+- drawdown
+- market regime
+- liquidity
+- correlation
+- market concentration
+- event risk
+- historical stress
+- abnormal volume
+
+Risk score must not mean:
+
+"XRP will crash."
+
+It means current measurable risk conditions are elevated.
+
+================================================================================
+25. MARKET HEALTH
+================================================================================
+
+Create Market Health module.
+
+Components:
+
+- volatility
+- volume
+- liquidity
+- momentum
+- trend
+- correlation
+- market regime
+- XRPL activity
+- exchange flows
+- concentration
+
+Display:
+
+current condition
+historical percentile
+trend
+data timestamp
+
+================================================================================
+26. ADVANCED CHARTS
+================================================================================
+
+Professional charting.
+
+Timeframes:
+
+1m
+5m
+15m
+1h
+4h
+1D
+1W
+1M
+
+Where data availability allows.
+
+Indicators:
+
+SMA
+EMA
+RSI
+MACD
+Bollinger Bands
+ATR
+Volume
+VWAP where applicable
+
+Do not overwhelm users.
+
+Indicators should be optional.
+
+================================================================================
+27. XRPL EXPLORER
+================================================================================
+
+Create XRP Ledger explorer.
+
+Search:
+
+- transaction hash
+- account
+- ledger
+- destination
+- offer
+- token
+- issuer
+
+Transaction page:
+
+- hash
+- ledger index
+- timestamp
+- transaction type
+- source
+- destination
+- amount
+- fees
+- result
+- metadata
+- affected objects
+- flags
+- sequence
+- memo where publicly available
+
+All data must come from XRPL sources.
+
+================================================================================
+28. XRPL WALLET LOOKUP
+================================================================================
+
+Public wallet lookup.
+
+Display:
+
+- XRP balance
+- token balances
+- transaction count
+- account age where calculable
+- recent activity
+- counterparties
+- trust lines
+- offers
+- payment activity
+- historical balance where available
+- activity pattern
+
+Never call a wallet "smart money" solely based on balance.
+
+================================================================================
+29. WALLET PROFILER
+================================================================================
+
+Create wallet behavior profile.
+
+Possible categories:
+
+- holder
+- active trader
+- liquidity participant
+- issuer
+- exchange-related
+- whale
+- long-term holder
+- high-frequency activity
+- dormant
+
+Classification must be data-driven.
+
+Every classification should have explainability.
+
+Example:
+
+"Classified as active trader because of X transactions across Y days."
+
+Avoid unsupported labels.
+
+================================================================================
+30. WALLET LABELS
+================================================================================
+
+Wallet labels can include:
+
+EXCHANGE
+ISSUER
+KNOWN SERVICE
+KNOWN ENTITY
+WHALE
+SMART MONEY
+TRADER
+HOLDER
+UNKNOWN
+
+Labels must have provenance.
+
+User-submitted labels must be clearly marked as user-provided.
+
+Do not turn speculation into fact.
+
+================================================================================
+31. WHALE INTELLIGENCE
+================================================================================
+
+Whale module.
+
+Track large:
+
+- transfers
+- accumulation
+- distribution
+- exchange movements
+- wallet balance changes
+
+Important:
+
+Large transfer ≠ buy.
+
+Large transfer ≠ sell.
+
+Large exchange transfer may have multiple explanations.
+
+UI must avoid misleading interpretations.
+
+================================================================================
+32. SMART MONEY
+================================================================================
+
+Create Smart Money module.
+
+Potential methodology:
+
+Identify wallets based on measurable historical behavior.
+
+Metrics:
+
+- realized performance where calculable
+- consistency
+- trade timing
+- risk
+- drawdown
+- sample size
+- holding period
+
+Never label wallets as smart money solely based on one profitable transaction.
+
+Minimum sample requirements.
+
+================================================================================
+33. ENTITY GRAPH
+================================================================================
+
+Create entity graph.
+
+Nodes:
+
+wallets
+exchanges
+issuers
+known entities
+contracts
+services
+
+Edges:
+
+payments
+transfers
+trades
+interactions
+
+Provide visual graph.
+
+Allow:
+
+- zoom
+- filter
+- search
+- date range
+- amount threshold
+
+Do not infer ownership without evidence.
+
+================================================================================
+34. EXCHANGE FLOWS
+================================================================================
+
+Track exchange-related flows where reliable labels exist.
+
+Metrics:
+
+inflows
+outflows
+net flow
+large transfers
+exchange concentration
+
+Clearly state:
+
+exchange flow is not equivalent to market direction.
+
+================================================================================
+35. XRPL ACTIVITY
+================================================================================
+
+Track:
+
+transactions
+payments
+offers
+trust line changes
+new accounts
+active accounts
+ledger activity
+fees
+DEX activity where data supports it
+
+Charts:
+
+24h
+7D
+30D
+90D
+1Y
+
+================================================================================
+36. XRP DEX INTELLIGENCE
+================================================================================
+
+Where reliable data is available:
+
+- XRPL DEX activity
+- offers
+- trading pairs
+- volume
+- liquidity
+- spreads
+- large trades
+- active participants
+
+Do not fabricate liquidity.
+
+================================================================================
+37. PORTFOLIO
+================================================================================
+
+Portfolio page.
+
+Show:
+
+total value
+XRP amount
+other assets
+allocation
+P&L
+daily change
+weekly change
+monthly change
+all-time change where calculable
+
+Charts:
+
+portfolio value
+allocation
+performance
+
+================================================================================
+38. PORTFOLIO COST BASIS
+================================================================================
+
+For data sources that support transaction history:
+
+calculate:
+
+cost basis
+realized P&L
+unrealized P&L
+average acquisition cost
+fees
+
+If cost basis is incomplete:
+
+display:
+
+"Cost basis incomplete."
+
+Do not invent missing transaction history.
+
+================================================================================
+39. CONNECTED ACCOUNTS
+================================================================================
+
+Connected account types:
+
+XRPL_WALLET
+EXCHANGE_ACCOUNT
+BLOCKCHAIN_WALLET
+DEFI_ACCOUNT
+
+Free:
+
+1 account
+
+Pro:
+
+up to 5
+
+Pro+:
+
+unlimited
+
+These limits must be enforced server-side.
+
+================================================================================
+40. XRPL WALLET CONNECTION
+================================================================================
+
+Users enter a public XRPL address.
+
+Validate:
+
+- address format
+- existence
+- current ledger state
+
+No private key.
+
+No seed phrase.
+
+No signing.
+
+================================================================================
+41. EXCHANGE CONNECTION
+================================================================================
+
+Exchange API connection:
+
+API key
+API secret
+
+Only if required by provider.
+
+Permissions:
+
+READ ONLY.
+
+Reject credentials if withdrawal/trading permissions are enabled where provider
+allows permission inspection.
+
+Never store secrets in plaintext.
+
+Encrypt sensitive credentials at rest.
+
+================================================================================
+42. PROVIDER ABSTRACTION
+================================================================================
+
+Architecture:
+
+ExchangeProvider
+WalletProvider
+MarketDataProvider
+NewsProvider
+AnalyticsProvider
+
+Methods should be standardized.
+
+Example:
+
+getBalance()
+getTransactions()
+getPositions()
+getOrders()
+getMarketData()
+getHistoricalData()
+
+Provider failures must not break entire application.
+
+================================================================================
+43. HISTORICAL INTELLIGENCE
+================================================================================
+
+Create dedicated Historical Intelligence page.
+
+Questions answered:
+
+What happened before?
+
+How did XRP behave during previous cycles?
+
+How deep were drawdowns?
+
+How long did recovery take?
+
+How long did trends last?
+
+How did XRP behave relative to BTC and ETH?
+
+What historical periods resemble current conditions?
+
+================================================================================
+44. HISTORICAL CYCLES
+================================================================================
+
+Identify historical XRP market cycles.
+
+For each:
+
+cycle start
+cycle high
+drawdown
+recovery
+duration
+return
+volatility
+
+Methodology must be documented.
+
+Do not imply future cycles must repeat.
+
+================================================================================
+45. NORMALIZED CYCLE COMPARISON
+================================================================================
+
+Normalize cycles by:
+
+days since cycle start.
+
+Allow:
+
+Cycle A
+Cycle B
+Cycle C
+Current Cycle
+
+comparison.
+
+Charts:
+
+normalized price
+drawdown
+recovery
+volatility
+
+================================================================================
+46. ATH ANALYSIS
+================================================================================
+
+Track:
+
+historical ATH
+date
+days since ATH
+drawdown from ATH
+recovery time
+distance to ATH
+
+Do not imply that ATH will necessarily be revisited.
+
+================================================================================
+47. DRAWDOWN ANALYSIS
+================================================================================
+
+Metrics:
+
+maximum drawdown
+average drawdown
+median drawdown
+recovery time
+time underwater
+frequency of drawdowns
+
+Display sample size.
+
+================================================================================
+48. RECOVERY ANALYSIS
+================================================================================
+
+Analyze recovery periods.
+
+Questions:
+
+How long did recovery take?
+
+What was the average recovery magnitude?
+
+How variable were recovery periods?
+
+Display:
+
+median
+mean
+minimum
+maximum
+sample size
+
+================================================================================
+49. HISTORICAL ANALOGUES
+================================================================================
+
+Find historical periods that resemble current conditions.
+
+Potential similarity inputs:
+
+trend
+volatility
+momentum
+volume
+market regime
+BTC correlation
+ETH correlation
+XRPL activity
+
+Display:
+
+similarity score
+
+But clearly state:
+
+"Historical similarity does not imply future repetition."
+
+================================================================================
+50. SEASONALITY
+================================================================================
+
+Analyze:
+
+monthly returns
+weekly patterns
+yearly patterns
+
+Only display seasonality where sample size is meaningful.
+
+Always show:
+
+sample size
+time period
+methodology
+
+Avoid small-sample conclusions.
+
+================================================================================
+51. VOLATILITY HISTORY
+================================================================================
+
+Track:
+
+realized volatility
+rolling volatility
+volatility percentile
+volatility regime
+
+Compare current volatility against history.
+
+================================================================================
+52. SUPPORT / RESISTANCE
+================================================================================
+
+Identify statistical zones.
+
+Potential methods:
+
+historical reaction zones
+volume
+swing highs/lows
+market structure
+
+Do not claim levels are guaranteed support/resistance.
+
+Use language:
+
+"historical reaction zone."
+
+================================================================================
+53. CORRELATION
+================================================================================
+
+Track:
+
+XRP/BTC
+XRP/ETH
+XRP broader market
+
+Metrics:
+
+30D
+90D
+180D
+1Y
+
+Display correlation coefficient and sample size.
+
+Explain:
+
+correlation does not prove causation.
+
+================================================================================
+54. STRESS TESTING
+================================================================================
+
+Historical stress scenarios.
+
+Examples:
+
+- historical XRP drawdown
+- market-wide crash period
+- volatility spike
+- liquidity reduction
+- BTC drawdown scenario
+
+User can test portfolio impact.
+
+================================================================================
+55. FUTURE INTELLIGENCE
+================================================================================
+
+Create /future.
+
+This page must be one of the flagship features.
+
+Horizon options:
+
+7D
+30D
+90D
+180D
+1Y
+3Y
+5Y
+
+Only enable horizons where methodology/data quality is sufficient.
+
+================================================================================
+56. SCENARIO MODEL
+================================================================================
+
+Scenarios:
+
+BEAR
+BASE
+BULL
+EXTREME
+
+Each scenario:
+
+range
+assumptions
+drivers
+risks
+invalidation conditions
+confidence/uncertainty
+model version
+timestamp
+
+Never present one guaranteed price.
+
+================================================================================
+57. FORECAST RANGES
+================================================================================
+
+Use ranges.
+
+Example concept:
+
+Bear:
+lower distribution
+
+Base:
+central distribution
+
+Bull:
+upper distribution
+
+Extreme:
+tail scenario
+
+Avoid:
+
+"XRP will reach exactly €X."
+
+================================================================================
+58. FORECAST EXPLANATION
+================================================================================
+
+Every forecast needs:
+
+WHY?
+
+Possible drivers:
+
+- trend
+- volatility
+- market regime
+- historical analogue
+- market correlation
+- XRPL metrics
+- liquidity
+- broader crypto market
+- news/events
+- institutional/regulatory data where reliable
+
+================================================================================
+59. FORECAST UNCERTAINTY
+================================================================================
+
+Show:
+
+confidence interval
+uncertainty band
+sample size
+model limitations
+
+Never hide uncertainty.
+
+================================================================================
+60. FORECAST INVALIDATION
+================================================================================
+
+Every scenario should define:
+
+"What would make this scenario less applicable?"
+
+Examples:
+
+- regime change
+- volatility shock
+- correlation breakdown
+- liquidity event
+- major external event
+- XRPL activity change
+
+================================================================================
+61. FORECAST HISTORY
+================================================================================
+
+Every published forecast is immutable.
+
+Store:
+
+forecast_id
+created_at
+model_version
+inputs
+scenario
+range
+uncertainty
+assumptions
+
+Never silently overwrite historical forecasts.
+
+================================================================================
+62. WHAT CHANGED
+================================================================================
+
+Compare current forecast with previous forecast.
+
+Show:
+
+range changed
+confidence changed
+regime changed
+inputs changed
+model version changed
+
+Explain differences.
+
+================================================================================
+63. FORECAST VS ACTUAL
+================================================================================
+
+Track:
+
+forecast
+actual
+error
+direction
+range coverage
+
+Metrics:
+
+MAE
+RMSE
+MAPE where appropriate
+directional accuracy
+coverage
+calibration
+
+Always show:
+
+sample size.
+
+================================================================================
+64. MODEL BENCHMARKS
+================================================================================
+
+Complex models must be compared against simple baselines.
+
+Baselines:
+
+naive persistence
+moving average
+historical median
+historical analogue
+
+Do not assume complex AI is automatically superior.
+
+================================================================================
+65. WALK-FORWARD TESTING
+================================================================================
+
+Backtesting must use walk-forward methodology where applicable.
+
+Never use future information in historical predictions.
+
+Avoid:
+
+lookahead bias
+survivorship bias
+data leakage
+
+Store training cutoff timestamps.
+
+================================================================================
+66. MODEL VERSIONING
+================================================================================
+
+Every model:
+
+model_name
+version
+training_period
+features
+parameters
+created_at
+evaluation_period
+metrics
+
+Forecast records must reference model version.
+
+================================================================================
+67. EXTERNAL FORECASTS
+================================================================================
+
+External analyst/model forecasts may be displayed.
+
+They must be separated from XRP Terminal's own model.
+
+Label:
+
+EXTERNAL VIEW
+
+Store:
+
+source
+author/entity
+date
+forecast
+methodology if available
+
+Never merge external forecast with internal model.
+
+================================================================================
+68. AI INTELLIGENCE
+================================================================================
+
+Create AI Intelligence module.
+
+AI can answer:
+
+What changed?
+
+Why did it change?
+
+What is confirmed?
+
+What is historical context?
+
+What are possible scenarios?
+
+What are risks?
+
+What should be watched?
+
+AI must use structured internal data.
+
+================================================================================
+69. AI DAILY BRIEF
+================================================================================
+
+Daily brief:
+
+1. Market snapshot
+2. What changed
+3. Why
+4. XRPL activity
+5. Whale activity
+6. Exchange flows
+7. News
+8. Historical context
+9. Future scenarios
+10. Risks
+11. What to watch
+
+All important factual claims should have sources.
+
+================================================================================
+70. AI WEEKLY BRIEF
+================================================================================
+
+Weekly:
+
+- weekly performance
+- regime change
+- volatility
+- XRPL activity
+- whale activity
+- exchange flows
+- news
+- historical context
+- forecast changes
+- major risks
+- upcoming events
+
+================================================================================
+71. AI SOURCE CONTROL
+================================================================================
+
+AI must never invent:
+
+sources
+URLs
+dates
+prices
+transactions
+organizations
+events
+quotes
+
+If no reliable source exists:
+
+say:
+
+"Source unavailable."
+
+================================================================================
+72. AI PROMPT INJECTION PROTECTION
+================================================================================
+
+External web content must be treated as untrusted.
+
+News articles may contain malicious instructions.
+
+Never allow external text to override system instructions.
+
+Separate:
+
+DATA
+
+from:
+
+INSTRUCTIONS.
+
+================================================================================
+73. CLAIM CHECK
+================================================================================
+
+Create News & Claim Check.
+
+Classifications:
+
+CONFIRMED
+DOCUMENTED
+PARTIALLY SUPPORTED
+ANALYSIS
+SPECULATIVE
+UNVERIFIED
+OUTDATED
+INACCURATE
+
+Every classification must have reasoning and source evidence.
+
+================================================================================
+74. CLAIM CHECK UI
+================================================================================
+
+Input:
+
+paste claim.
+
+Output:
+
+claim
+classification
+evidence
+source
+date
+confidence
+counter-evidence
+context
+
+Do not automatically label something inaccurate without evidence.
+
+================================================================================
+75. NEWS ENGINE
+================================================================================
+
+Collect headlines from reliable providers.
+
+Store:
+
+title
+source
+URL
+published_at
+category
+summary
+asset
+entities
+
+Do not copy full articles.
+
+Generate short original summaries.
+
+================================================================================
+76. NEWS CATEGORIES
+================================================================================
+
+Categories:
+
+MARKET
+XRPL
+RIPPLE
+REGULATION
+INSTITUTIONAL
+PAYMENTS
+RLUSD
+EXCHANGES
+MACRO
+TECHNOLOGY
+SECURITY
+DEVELOPMENT
+COMMUNITY
+
+================================================================================
+77. NEWS DEDUPLICATION
+================================================================================
+
+Detect duplicate stories.
+
+Cluster:
+
+same event
+same source
+same story
+
+Show multiple sources when useful.
+
+================================================================================
+78. EVENT INTELLIGENCE
+================================================================================
+
+Track:
+
+regulatory events
+court/public filings where relevant
+institutional announcements
+XRPL updates
+major exchange changes
+protocol developments
+scheduled macro events
+
+Clearly distinguish confirmed events from rumors.
+
+================================================================================
+79. RLUSD INFORMATION
+================================================================================
+
+Provide educational/analytical coverage of RLUSD.
+
+Potential:
+
+market data
+supply
+activity
+XRPL relationships
+news
+institutional developments
+
+Do not imply that RLUSD activity guarantees XRP price movement.
+
+================================================================================
+80. SOCIAL INTELLIGENCE
+================================================================================
+
+Create Social Intelligence.
+
+Track publicly available information from supported sources.
+
+Categories:
+
+- community sentiment
+- notable discussions
+- verified accounts
+- trending topics
+- narrative changes
+- trader activity
+
+Never treat social sentiment as objective truth.
+
+================================================================================
+81. SOCIAL SENTIMENT
+================================================================================
+
+Sentiment:
+
+BULLISH
+NEUTRAL
+BEARISH
+MIXED
+
+Use sample size.
+
+Show:
+
+source count
+time period
+methodology
+
+Do not equate sentiment with future price.
+
+================================================================================
+82. VERIFIED TRADERS
+================================================================================
+
+Create Verified Traders.
+
+A verified trader may connect:
+
+- read-only exchange account
+- public wallet
+- supported trading account data
+
+Trader must choose which information becomes public.
+
+================================================================================
+83. TRADER VERIFICATION
+================================================================================
+
+Verification must confirm that performance data originates from a connected
+source.
+
+Never verify claims based only on screenshots.
+
+Verification status:
+
+VERIFIED
+UNVERIFIED
+PENDING
+REVOKED
+
+================================================================================
+84. TRADER PROFILE
+================================================================================
+
+Profile:
+
+display name
+avatar
+bio
+verification
+ROI
+P&L
+max drawdown
+win rate
+trade count
+average holding time
+consistency
+risk metrics
+history
+
+Minimum sample size required.
+
+================================================================================
+85. TRADER PRIVACY
+================================================================================
+
+Trader can control:
+
+public profile
+public P&L
+public positions
+public trades
+public history
+public wallet
+anonymous statistics
+
+No private account data exposed.
+
+================================================================================
+86. LEADERBOARDS
+================================================================================
+
+Leaderboards must NOT rank only by ROI.
+
+Possible dimensions:
+
+risk-adjusted performance
+consistency
+drawdown
+sample size
+profit factor
+trade count
+
+Avoid ranking users with insufficient data.
+
+================================================================================
+87. SIMULATED MIMIC
+================================================================================
+
+Users may simulate following a verified trader.
+
+This is NOT copy trading.
+
+The simulation should say:
+
+SIMULATED
+
+No real transactions.
+
+Show hypothetical:
+
+entry
+exit
+position size
+fees
+slippage
+result
+
+================================================================================
+88. SOCIAL SCAM PROTECTION
+================================================================================
+
+Never allow:
+
+guaranteed profit claims
+fake verification
+fake performance
+deposit requests
+seed phrase requests
+private key requests
+
+Flag suspicious content.
+
+Allow reporting.
+
+================================================================================
+89. TRADE LAB
+================================================================================
+
+Trade Lab is a major flagship module.
+
+Purpose:
+
+Professional paper trading environment using current market data.
+
+Everything is simulated.
+
+No real money.
+
+No real execution.
+
+================================================================================
+90. DEMO ACCOUNT
+================================================================================
+
+Default virtual capital:
+
+$100,000
+
+Optional starting balances:
+
+$10,000
+$50,000
+$100,000
+$250,000
+$1,000,000
+
+Users cannot deposit real money.
+
+Users cannot withdraw virtual money as real money.
+
+================================================================================
+91. TRADE LAB MARKET DATA
+================================================================================
+
+Trade Lab uses current/real market data where provider availability allows.
+
+The system must show:
+
+LIVE DATA
+
+or:
+
+LAST UPDATED.
+
+Do not pretend delayed data is real-time.
+
+================================================================================
+92. ORDER TYPES
+================================================================================
+
+Support:
+
+MARKET
+LIMIT
+STOP
+STOP-LIMIT
+
+Future:
+
+advanced conditional orders.
+
+================================================================================
+93. MARKET ORDER
+================================================================================
+
+Market order simulation uses:
+
+current market price
+
+plus configurable/slightly realistic simulated slippage.
+
+Execution must be deterministic based on captured market snapshot.
+
+================================================================================
+94. LIMIT ORDER
+================================================================================
+
+Limit order:
+
+price
+quantity
+side
+
+Status:
+
+OPEN
+FILLED
+PARTIALLY_FILLED where supported
+CANCELLED
+EXPIRED
+
+Simulation engine must process market movement.
+
+================================================================================
+95. STOP ORDER
+================================================================================
+
+Stop order activates when trigger condition is met.
+
+Store:
+
+trigger_price
+activation_time
+execution_price
+slippage
+
+================================================================================
+96. STOP-LIMIT
+================================================================================
+
+Stop activates limit order.
+
+Store:
+
+stop_price
+limit_price
+activation
+fill state
+
+================================================================================
+97. TAKE PROFIT
+================================================================================
+
+Support take-profit.
+
+User can define:
+
+price
+quantity
+percentage
+
+================================================================================
+98. STOP LOSS
+================================================================================
+
+Support stop-loss.
+
+Show:
+
+risk amount
+risk percentage
+distance to stop
+
+================================================================================
+99. POSITION MANAGEMENT
+================================================================================
+
+Position page:
+
+asset
+side
+quantity
+entry price
+current price
+unrealized P&L
+realized P&L
+stop loss
+take profit
+fees
+slippage
+holding time
+
+================================================================================
+100. FEES
+================================================================================
+
+Paper trading should simulate fees.
+
+Fee model must be configurable.
+
+Store:
+
+fee_rate
+fee_amount
+fee_source
+
+Never hide simulated fees.
+
+================================================================================
+101. SLIPPAGE
+================================================================================
+
+Simulated slippage must be configurable.
+
+Potential model:
+
+market volatility
+liquidity
+order size
+
+Simple deterministic fallback allowed.
+
+Always disclose simulation assumptions.
+
+================================================================================
+102. EQUITY
+================================================================================
+
+Calculate:
+
+cash
+position value
+equity
+unrealized P&L
+realized P&L
+fees
+drawdown
+
+Formula calculations must happen in code, not through AI.
+
+================================================================================
+103. DRAWDOWN
+================================================================================
+
+Track:
+
+peak equity
+current equity
+drawdown
+maximum drawdown
+
+Show chart.
+
+================================================================================
+104. RISK MANAGEMENT
+================================================================================
+
+Trade Lab should calculate:
+
+position size
+risk per trade
+stop distance
+potential loss
+risk/reward
+
+User may set:
+
+max risk %
+max position %
+max daily loss
+
+These are simulation controls.
+
+================================================================================
+105. POSITION SIZING CALCULATOR
+================================================================================
+
+Inputs:
+
+account size
+risk percentage
+entry
+stop
+target
+
+Output:
+
+position size
+risk amount
+potential profit
+risk/reward ratio
+
+================================================================================
+106. TRADE JOURNAL
+================================================================================
+
+Every trade can include:
+
+reason for entry
+setup
+market regime
+risk
+stop
+target
+emotion
+confidence
+exit reason
+lesson
+
+Do not expose private journal data.
+
+================================================================================
+107. TRADE REVIEW
+================================================================================
+
+After a trade:
+
+planned entry
+actual entry
+planned stop
+actual exit
+planned target
+actual result
+slippage
+fees
+mistake tags
+lesson
+
+================================================================================
+108. PERFORMANCE DASHBOARD
+================================================================================
+
+Metrics:
+
+total return
+net P&L
+win rate
+average win
+average loss
+profit factor
+max drawdown
+average holding time
+largest win
+largest loss
+trade count
+risk-adjusted metrics where statistically meaningful
+
+================================================================================
+109. BUY-AND-HOLD BENCHMARK
+================================================================================
+
+Compare paper strategy against:
+
+XRP buy-and-hold
+
+Same starting capital.
+
+Same time period.
+
+Show:
+
+strategy return
+benchmark return
+difference
+
+No conclusion that one is "better" without context.
+
+================================================================================
+110. TRADE QUALITY
+================================================================================
+
+Analyze execution quality.
+
+Metrics:
+
+planned risk
+actual risk
+slippage
+entry timing
+exit timing
+R multiple
+
+AI may explain trade quality.
+
+AI must not fabricate market facts.
+
+================================================================================
+111. AI TRADING COACH
+================================================================================
+
+AI coach analyzes completed trades.
+
+Questions:
+
+What patterns appear?
+
+What mistakes repeat?
+
+Where is risk concentrated?
+
+How consistent is execution?
+
+What changed over time?
+
+The AI coach does NOT say:
+
+"Buy XRP now."
+
+"Sell XRP now."
+
+It is an analytical coach.
+
+================================================================================
+112. HISTORICAL REPLAY
+================================================================================
+
+Create Historical Replay.
+
+User selects:
+
+date
+starting capital
+market
+speed
+
+Future candles are hidden.
+
+User trades as if in historical time.
+
+No lookahead.
+
+================================================================================
+113. REPLAY SPEED
+================================================================================
+
+Options:
+
+0.5x
+1x
+2x
+5x
+10x
+
+Optional step-by-step mode.
+
+================================================================================
+114. REPLAY SESSION
+================================================================================
+
+Store:
+
+session
+start date
+end date
+capital
+trades
+performance
+strategy
+notes
+
+Allow saving sessions.
+
+================================================================================
+115. STRATEGY LAB
+================================================================================
+
+Strategy builder.
+
+Conditions:
+
+price
+moving average
+RSI
+MACD
+volatility
+volume
+regime
+support/resistance
+XRP/BTC
+other supported metrics
+
+Actions:
+
+entry
+exit
+stop
+take profit
+
+================================================================================
+116. STRATEGY BACKTEST
+================================================================================
+
+Backtest must specify:
+
+date range
+starting capital
+fees
+slippage
+timeframe
+strategy rules
+
+Results:
+
+return
+P&L
+drawdown
+win rate
+profit factor
+trade count
+buy-and-hold benchmark
+
+================================================================================
+117. BACKTEST INTEGRITY
+================================================================================
+
+Prevent:
+
+lookahead
+future leakage
+future candle access
+survivorship bias
+
+All strategy signals must use only information available at that historical
+timestamp.
+
+================================================================================
+118. STRATEGY COMPARISON
+================================================================================
+
+Compare multiple strategies.
+
+Show:
+
+performance
+risk
+drawdown
+trade count
+consistency
+
+Do not rank them as "best".
+
+================================================================================
+119. PAPER TRADING CHALLENGES
+================================================================================
+
+Optional challenges:
+
+30-day challenge
+risk-controlled challenge
+replay challenge
+strategy challenge
+
+All simulation.
+
+================================================================================
+120. PAPER LEADERBOARD
+================================================================================
+
+Leaderboard can show:
+
+return
+risk-adjusted return
+drawdown
+consistency
+
+Minimum sample size.
+
+Clear:
+
+SIMULATED.
+
+================================================================================
+121. TRADING ACADEMY
+================================================================================
+
+Create educational section.
+
+Topics:
+
+market basics
+order types
+candles
+technical analysis
+risk management
+portfolio management
+XRPL
+on-chain analysis
+paper trading
+strategy development
+backtesting
+psychology
+data interpretation
+
+Do not promise profitability.
+
+================================================================================
+122. REAL TRADING BRIDGE
+================================================================================
+
+Future bridge only.
+
+Initially provide informational links to supported providers.
+
+No live execution.
+
+Architecture should allow future implementation but leave it disabled.
+
+================================================================================
+123. WATCHLIST
+================================================================================
+
+Watchlist:
+
+XRP
+XRP pairs
+wallets
+traders
+news topics
+XRPL entities
+
+Users can add/remove.
+
+================================================================================
+124. ALERT ENGINE
+================================================================================
+
+Alerts:
+
+price
+percentage change
+volatility
+volume
+wallet activity
+whale transaction
+exchange flow
+regime change
+news
+forecast change
+portfolio threshold
+
+================================================================================
+125. SMART ALERTS
+================================================================================
+
+Allow combinations.
+
+Example:
+
+IF XRP volatility > threshold
+AND regime changes
+THEN notify.
+
+Do not spam.
+
+================================================================================
+126. ALERT CHANNELS
+================================================================================
+
+Possible:
+
+in-app
+email
+push
+future Telegram/Discord integrations
+
+Respect user preferences.
+
+================================================================================
+127. ALERT ANTI-SPAM
+================================================================================
+
+Implement:
+
+cooldown
+deduplication
+aggregation
+daily limits
+priority
+
+Critical alerts may bypass normal aggregation.
+
+================================================================================
+128. CALCULATORS
+================================================================================
+
+Create calculators:
+
+profit/loss
+percentage change
+position size
+risk/reward
+compound return
+drawdown
+portfolio scenario
+DCA
+fees
+slippage
+market cap
+supply valuation
+
+================================================================================
+129. SCENARIO CALCULATOR
+================================================================================
+
+User inputs:
+
+XRP amount
+current price
+future scenario price
+
+Output:
+
+portfolio value
+absolute change
+percentage change
+
+Must clearly say:
+
+hypothetical scenario.
+
+================================================================================
+130. DCA CALCULATOR
+================================================================================
+
+Inputs:
+
+initial amount
+recurring amount
+frequency
+duration
+assumed price path
+
+Output:
+
+contributions
+average cost
+hypothetical value
+
+Never call it a forecast.
+
+================================================================================
+131. COMMAND PALETTE
+================================================================================
+
+Keyboard shortcut:
+
+CMD/CTRL + K
+
+Search:
+
+pages
+wallets
+transactions
+traders
+news
+calculators
+settings
+
+Fast navigation.
+
+================================================================================
+132. SHARE CARDS
+================================================================================
+
+Generate shareable cards.
+
+Examples:
+
+XRP performance
+historical statistic
+forecast scenario
+portfolio metric
+Trade Lab result
+
+Must include:
+
+XRP Terminal branding
+timestamp
+data source/context
+SIMULATED label where required
+
+================================================================================
+133. REPORTS
+================================================================================
+
+Generate professional reports.
+
+Potential:
+
+portfolio report
+historical report
+wallet report
+market report
+Trade Lab report
+
+PDF export future/optional depending implementation.
+
+================================================================================
+134. ADMIN DASHBOARD
+================================================================================
+
+Admin dashboard.
+
+Show:
+
+users
+active users
+subscriptions
+MRR
+revenue
+conversion
+churn
+data provider health
+AI usage
+system health
+alerts
+jobs
+errors
+storage
+API usage
+
+================================================================================
+135. ADMIN USER MANAGEMENT
+================================================================================
+
+Admin can:
+
+view user
+change plan
+suspend account
+restore account
+view usage
+view connected account metadata
+view audit events
+
+Admin must NOT see:
+
+seed phrases
+private keys
+plaintext API secrets
+
+================================================================================
+136. ADMIN REVENUE
+================================================================================
+
+Show:
+
+MRR
+ARR
+subscriptions
+new subscribers
+cancellations
+churn
+trial conversion
+plan distribution
+
+Use Stripe as billing source of truth.
+
+================================================================================
+137. STRIPE
+================================================================================
+
+Implement:
+
+checkout
+subscription
+customer portal
+webhooks
+subscription status
+plan changes
+cancellation
+renewal
+
+Webhook events must be verified.
+
+Do not trust browser-side subscription claims.
+
+================================================================================
+138. SUBSCRIPTION ENTITLEMENTS
+================================================================================
+
+Central entitlement engine.
+
+Example:
+
+canUseAdvancedForecast()
+canAddConnectedAccount()
+canUseAdvancedTradeLab()
+canUseAdvancedAlerts()
+
+Never scatter plan logic throughout UI.
+
+================================================================================
+139. AFFILIATE SYSTEM
+================================================================================
+
+Support future affiliate/referral model.
+
+Fields:
+
+affiliate_id
+referral_code
+click
+signup
+conversion
+commission
+status
+
+Never fabricate conversions.
+
+================================================================================
+140. REFERRAL SYSTEM
+================================================================================
+
+Users may have referral links.
+
+Track:
+
+clicks
+signups
+qualified users
+paid conversion
+
+Fraud protection required.
+
+================================================================================
+141. DATABASE
+================================================================================
+
+Use PostgreSQL/Supabase architecture where appropriate.
+
+Database must be normalized where practical.
+
+Required tables may include:
+
+users
+profiles
+subscriptions
+plans
+entitlements
+connected_accounts
+wallets
+wallet_labels
+wallet_events
+transactions
+market_prices
+market_candles
+market_metrics
+xrpl_ledgers
+xrpl_transactions
+xrpl_accounts
+xrpl_trustlines
+xrpl_offers
+news
+news_sources
+news_clusters
+claims
+claim_evidence
+ai_briefs
+forecasts
+forecast_scenarios
+forecast_versions
+forecast_actuals
+alerts
+alert_rules
+watchlists
+traders
+trader_accounts
+trader_metrics
+trader_trades
+follows
+paper_accounts
+paper_orders
+paper_fills
+paper_positions
+paper_trades
+paper_journal
+replay_sessions
+strategies
+backtests
+backtest_trades
+academy_content
+share_cards
+affiliate_clicks
+affiliate_conversions
+admin_audit_logs
+system_jobs
+provider_health
+data_snapshots
+
+================================================================================
+142. DATABASE SECURITY
+================================================================================
+
+Every user-owned table must have ownership controls.
+
+RLS policies:
+
+user can read own data
+user can write own allowed data
+user cannot access another user's private data
+
+Public data must be separated from private user data.
+
+================================================================================
+143. AUDIT LOG
+================================================================================
+
+Record sensitive actions:
+
+login
+logout
+password changes
+subscription changes
+connected account changes
+wallet connection
+account deletion
+admin actions
+forecast publication
+model version change
+data provider change
+
+================================================================================
+144. SECRET MANAGEMENT
+================================================================================
+
+Secrets must exist only server-side.
+
+Examples:
+
+database credentials
+Stripe secret
+provider API keys
+AI keys
+exchange credentials
+
+Never expose in frontend bundle.
+
+================================================================================
+145. EXCHANGE SECRET ENCRYPTION
+================================================================================
+
+If read-only exchange credentials are stored:
+
+encrypt at rest.
+
+Use key management appropriate to deployment.
+
+Never log:
+
+API secret
+API key
+authorization header
+private credentials
+
+================================================================================
+146. LOGGING
+================================================================================
+
+Logs must not contain:
+
+passwords
+seed phrases
+private keys
+exchange secrets
+session tokens
+
+Use structured logging.
+
+================================================================================
+147. ERROR HANDLING
+================================================================================
+
+Every API endpoint must return structured errors.
+
+Frontend must show useful messages.
+
+Never expose stack traces to users.
+
+================================================================================
+148. API RATE LIMITING
+================================================================================
+
+Rate-limit:
+
+login
+signup
+wallet lookup
+AI
+claim check
+news
+alerts
+public API
+admin endpoints
+
+Use IP and user-level controls where appropriate.
+
+================================================================================
+149. CACHE
+================================================================================
+
+Cache expensive public data.
+
+Examples:
+
+market data
+historical candles
+XRPL analytics
+news
+wallet summaries
+
+Private data must use correct user-scoped cache keys.
+
+================================================================================
+150. QUEUE SYSTEM
+================================================================================
+
+Background jobs:
+
+market sync
+XRPL sync
+news ingestion
+AI briefs
+forecast calculations
+alerts
+portfolio sync
+provider health
+cleanup
+analytics aggregation
+
+Jobs must be retryable.
+
+================================================================================
+151. CRON
+================================================================================
+
+Scheduled jobs:
+
+hourly market metrics
+daily AI brief
+daily forecast evaluation
+news ingestion
+wallet refresh
+weekly report
+provider health
+
+Never rely on frontend page loading for critical scheduled processing.
+
+================================================================================
+152. OBSERVABILITY
+================================================================================
+
+Track:
+
+errors
+latency
+API failures
+provider failures
+job failures
+queue depth
+AI usage
+database performance
+
+Admin should have system health page.
+
+================================================================================
+153. PROVIDER HEALTH
+================================================================================
+
+Each provider:
+
+status
+latency
+last_success
+last_failure
+error_rate
+
+Statuses:
+
+HEALTHY
+DEGRADED
+DOWN
+UNKNOWN
+
+Automatic fallback where possible.
+
+================================================================================
+154. DATA PROVENANCE
+================================================================================
+
+Every major data point should be traceable.
+
+Store:
+
+source
+provider
+retrieved_at
+timestamp
+methodology
+
+================================================================================
+155. DATA NORMALIZATION
+================================================================================
+
+Normalize:
+
+currency
+timestamp
+asset symbol
+network
+wallet address
+exchange
+transaction types
+
+Use UTC internally.
+
+Display local timezone.
+
+================================================================================
+156. HISTORICAL DATA STORAGE
+================================================================================
+
+Store candles efficiently.
+
+Indexes:
+
+asset
+timeframe
+timestamp
+
+Avoid duplicated candles.
+
+================================================================================
+157. MARKET DATA QUALITY
+================================================================================
+
+Validate:
+
+missing candles
+duplicate candles
+negative values
+invalid timestamps
+spikes
+provider inconsistencies
+
+Bad data must be flagged.
+
+================================================================================
+158. XRPL DATA QUALITY
+================================================================================
+
+Validate:
+
+ledger sequence
+transaction hash
+account format
+timestamps
+amounts
+transaction result
+
+Handle partial indexing gracefully.
+
+================================================================================
+159. AI COST CONTROL
+================================================================================
+
+AI calls should be optimized.
+
+Use:
+
+caching
+structured prompts
+summaries
+token limits
+model selection
+batching
+
+Do not send huge raw datasets to AI unnecessarily.
+
+================================================================================
+160. AI RESPONSE STRUCTURE
+================================================================================
+
+AI outputs should be structured.
+
+Example:
+
+summary
+facts
+analysis
+historical_context
+scenarios
+risks
+watch_items
+sources
+
+================================================================================
+161. AI FACT / ANALYSIS SEPARATION
+================================================================================
+
+Use explicit labels:
+
+FACT
+ANALYSIS
+SCENARIO
+SPECULATION
+
+The user must be able to understand which is which.
+
+================================================================================
+162. AI CONFIDENCE
+================================================================================
+
+AI confidence must not be treated as statistical model confidence.
+
+Where numerical confidence exists:
+
+calculate it from model methodology.
+
+Do not let an LLM invent probability.
+
+================================================================================
+163. AI MEMORY
+================================================================================
+
+AI can remember user preferences only through explicit product settings/memory
+architecture.
+
+Do not use sensitive financial credentials.
+
+Never store private keys.
+
+================================================================================
+164. PORTFOLIO PRIVACY
+================================================================================
+
+Portfolio is private by default.
+
+Social sharing is opt-in.
+
+Public portfolio must have explicit user permission.
+
+================================================================================
+165. SOCIAL MODERATION
+================================================================================
+
+Implement reporting.
+
+Possible report categories:
+
+scam
+fraud
+impersonation
+misinformation
+harassment
+spam
+fake performance
+
+================================================================================
+166. ADMIN MODERATION
+================================================================================
+
+Admin can:
+
+review reports
+hide content
+suspend users
+restore content
+mark verified accounts
+revoke verification
+
+Every moderation action logged.
+
+================================================================================
+167. SEO
+================================================================================
+
+Public pages optimized for SEO.
+
+Potential public pages:
+
+home
+market
+XRPL explorer
+public wallet profiles
+public trader profiles
+academy
+research
+
+Private dashboard must not be indexed.
+
+================================================================================
+168. METADATA
+================================================================================
+
+Every public page:
+
+title
+description
+Open Graph
+Twitter/X metadata
+canonical URL
+structured data where relevant
+
+================================================================================
+169. PERFORMANCE
+================================================================================
+
+Target:
+
+fast initial load
+lazy loading
+code splitting
+image optimization
+query optimization
+server caching
+
+Do not render massive datasets unnecessarily.
+
+================================================================================
+170. MOBILE PWA
+================================================================================
+
+Prepare PWA architecture.
+
+Possible:
+
+installable app
+offline shell
+push notifications
+
+Critical financial data must not be presented as current when offline.
+
+================================================================================
+171. ACCESSIBILITY
+================================================================================
+
+Support:
+
+keyboard navigation
+focus states
+screen readers
+contrast
+reduced motion
+semantic HTML
+ARIA where needed
+
+================================================================================
+172. INTERNATIONALIZATION
+================================================================================
+
+Architecture should support:
+
+English
+Spanish
+Latvian
+Russian
+
+Initial launch language may be English.
+
+Do not hard-code UI strings.
+
+================================================================================
+173. CURRENCY
+================================================================================
+
+Support:
+
+USD
+EUR
+GBP
+
+Future:
+
+other currencies.
+
+Currency conversion must show source/time.
+
+================================================================================
+174. TIMEZONE
+================================================================================
+
+Store timestamps UTC.
+
+User chooses timezone.
+
+Display dates according to user setting.
+
+================================================================================
+175. DATE FORMATTING
+================================================================================
+
+Use consistent format.
+
+Charts and tables must display timezone where relevant.
+
+================================================================================
+176. EMPTY STATES
+================================================================================
+
+Examples:
+
+"No wallet connected yet."
+
+"No historical data available."
+
+"No alerts configured."
+
+"No paper trades yet."
+
+"No verified traders found."
+
+Never show empty cards without explanation.
+
+================================================================================
+177. LOADING STATES
+================================================================================
+
+Use skeletons.
+
+Do not show misleading zeros while loading.
+
+================================================================================
+178. ERROR STATES
+================================================================================
+
+Example:
+
+"Market data temporarily unavailable."
+
+Include:
+
+retry
+
+last known update
+
+provider status where relevant.
+
+================================================================================
+179. OFFLINE / STALE
+================================================================================
+
+If data becomes stale:
+
+show stale indicator.
+
+Do not hide stale timestamp.
+
+================================================================================
+180. NOTIFICATION CENTER
+================================================================================
+
+In-app notification center.
+
+Categories:
+
+market
+portfolio
+wallet
+news
+forecast
+Trade Lab
+social
+system
+
+Unread count.
+
+================================================================================
+181. USER WATCHLIST ALERTS
+================================================================================
+
+Watchlist items can trigger alerts.
+
+Example:
+
+XRP crosses price.
+
+Wallet moves large amount.
+
+Trader publishes new verified performance.
+
+Forecast range changes.
+
+================================================================================
+182. SEARCH
+================================================================================
+
+Global search.
+
+Search:
+
+wallet
+transaction
+trader
+news
+page
+academy
+market pair
+
+Use fuzzy matching where appropriate.
+
+================================================================================
+183. XRPL ADDRESS VALIDATION
+================================================================================
+
+Validate XRPL classic addresses.
+
+Support appropriate modern formats where data provider supports them.
+
+Always normalize safely.
+
+================================================================================
+184. TRANSACTION DETAIL UX
+================================================================================
+
+Transaction page should be visually clear.
+
+Top:
+
+transaction status
+
+Then:
+
+summary
+amount
+fee
+ledger
+timestamp
+
+Then:
+
+technical details
+
+Then:
+
+affected objects
+
+================================================================================
+185. WALLET ACTIVITY TIMELINE
+================================================================================
+
+Wallet page includes chronological activity.
+
+Filters:
+
+payments
+offers
+trust lines
+tokens
+large transfers
+
+================================================================================
+186. WALLET BALANCE HISTORY
+================================================================================
+
+Where enough historical data exists:
+
+balance over time
+
+Show:
+
+XRP
+tokens
+total estimated value where market data exists.
+
+================================================================================
+187. WALLET RISK SIGNALS
+================================================================================
+
+Possible signals:
+
+concentration
+exchange exposure
+large transfer
+dormancy
+rapid activity
+
+Signals are informational.
+
+================================================================================
+188. MARKET ALERTS
+================================================================================
+
+Price alert examples:
+
+XRP > X
+XRP < X
+24h move > X%
+volume > X
+volatility > X
+
+================================================================================
+189. WALLET ALERTS
+================================================================================
+
+Examples:
+
+wallet sends > X XRP
+wallet receives > X XRP
+wallet becomes active
+wallet balance changes > X%
+
+================================================================================
+190. NEWS ALERTS
+================================================================================
+
+Topics:
+
+XRPL
+Ripple
+RLUSD
+regulation
+institutional
+exchange
+
+================================================================================
+191. FORECAST ALERTS
+================================================================================
+
+Notify when:
+
+forecast range changes
+model changes
+regime changes
+uncertainty increases
+
+================================================================================
+192. PAPER TRADING ALERTS
+================================================================================
+
+Simulation alerts:
+
+order filled
+stop triggered
+take-profit triggered
+drawdown threshold
+daily loss threshold
+
+================================================================================
+193. DATA EXPORT
+================================================================================
+
+Users can export their data.
+
+Formats:
+
+CSV
+JSON
+
+Potential exports:
+
+portfolio
+transactions
+paper trades
+journal
+alerts
+settings
+
+================================================================================
+194. ACCOUNT DELETION
+================================================================================
+
+Allow deletion.
+
+Explain consequences.
+
+Delete/anonymize personal data according to legal requirements.
+
+Preserve only data legally required to retain.
+
+================================================================================
+195. GDPR
+================================================================================
+
+Implement:
+
+privacy policy
+consent where required
+data access
+data export
+deletion
+cookie management
+processing transparency
+
+Legal implementation must be reviewed professionally.
+
+================================================================================
+196. COOKIE MANAGEMENT
+================================================================================
+
+Separate:
+
+necessary cookies
+analytics
+marketing
+
+Require appropriate consent where required.
+
+================================================================================
+197. TERMS
+================================================================================
+
+Create Terms of Service.
+
+Include:
+
+platform purpose
+non-custody
+simulation
+data limitations
+AI limitations
+forecast limitations
+third-party providers
+subscriptions
+acceptable use
+liability
+account termination
+
+================================================================================
+198. PRIVACY POLICY
+================================================================================
+
+Explain:
+
+what data is collected
+why
+how long
+third-party providers
+security
+user rights
+deletion
+
+================================================================================
+199. RISK DISCLOSURE
+================================================================================
+
+Crypto risk disclosure must be visible.
+
+Explain:
+
+volatility
+liquidity
+loss risk
+model uncertainty
+historical limitations
+simulation limitations
+
+================================================================================
+200. INTELLECTUAL PROPERTY
+================================================================================
+
+Do not use third-party trademarks improperly.
+
+Do not reproduce proprietary logos.
+
+External trademarks should be used only where legally appropriate.
+
+================================================================================
+201. THIRD-PARTY DATA LICENSES
+================================================================================
+
+Every provider must have:
+
+license review
+attribution requirements
+usage limits
+commercial-use permission
+
+Never scrape prohibited sources.
+
+================================================================================
+202. NEWS LICENSING
+================================================================================
+
+Use APIs/providers where necessary.
+
+Store short metadata and original summaries.
+
+Do not republish full copyrighted articles.
+
+================================================================================
+203. MODEL GOVERNANCE
+================================================================================
+
+Maintain model registry.
+
+Every production model:
+
+owner
+version
+purpose
+inputs
+training period
+evaluation
+limitations
+
+================================================================================
+204. MODEL CHANGELOG
+================================================================================
+
+When model changes:
+
+record
+
+old version
+new version
+reason
+metrics
+effective date
+
+================================================================================
+205. FORECAST IMMUTABILITY
+================================================================================
+
+Once forecast is published:
+
+DO NOT overwrite.
+
+New forecast = new version.
+
+================================================================================
+206. FORECAST EVALUATION
+================================================================================
+
+Evaluate forecasts automatically.
+
+After horizon expires:
+
+compare prediction vs actual.
+
+Store:
+
+error
+coverage
+direction
+model version
+
+================================================================================
+207. FORECAST DASHBOARD
+================================================================================
+
+Show:
+
+historical forecast accuracy
+
+by:
+
+horizon
+model
+regime
+period
+
+Never hide poor periods.
+
+================================================================================
+208. MODEL PERFORMANCE SAMPLE SIZE
+================================================================================
+
+Always show:
+
+N = number of observations.
+
+Small N must be clearly indicated.
+
+================================================================================
+209. MODEL CALIBRATION
+================================================================================
+
+Where probabilistic forecasts exist:
+
+check calibration.
+
+A confidence range should have empirical interpretation.
+
+================================================================================
+210. BACKTEST REPORT
+================================================================================
+
+Backtest report:
+
+strategy
+period
+capital
+fees
+slippage
+trades
+return
+drawdown
+win rate
+profit factor
+benchmark
+assumptions
+
+================================================================================
+211. STRATEGY VERSIONING
+================================================================================
+
+Every strategy:
+
+name
+version
+rules
+parameters
+created_at
+
+Changing rules creates new version.
+
+================================================================================
+212. TRADE EXECUTION ENGINE
+================================================================================
+
+Paper engine should have deterministic state machine.
+
+Order:
+
+CREATED
+OPEN
+TRIGGERED
+PARTIALLY_FILLED
+FILLED
+CANCELLED
+EXPIRED
+REJECTED
+
+================================================================================
+213. PAPER ORDER VALIDATION
+================================================================================
+
+Validate:
+
+sufficient virtual cash
+valid quantity
+valid price
+valid stop
+valid limit
+market status
+
+================================================================================
+214. PAPER ACCOUNT LEDGER
+================================================================================
+
+Maintain immutable simulation ledger.
+
+Events:
+
+deposit virtual capital
+order
+fill
+fee
+position
+realized P&L
+adjustment
+
+No hidden balance changes.
+
+================================================================================
+215. PAPER ACCOUNT RESET
+================================================================================
+
+Allow reset only with explicit confirmation.
+
+Reset creates a new simulation session/version.
+
+Do not erase historical audit data unnecessarily.
+
+================================================================================
+216. TRADING JOURNAL SEARCH
+================================================================================
+
+Search journal by:
+
+setup
+tag
+date
+result
+market regime
+mistake
+lesson
+
+================================================================================
+217. JOURNAL TAGS
+================================================================================
+
+Examples:
+
+FOMO
+LATE_ENTRY
+EARLY_EXIT
+OVERSIZED
+GOOD_SETUP
+BAD_SETUP
+NO_STOP
+FOLLOWED_PLAN
+BROKE_PLAN
+
+These are user-defined analytical tags.
+
+================================================================================
+218. AI JOURNAL ANALYSIS
+================================================================================
+
+AI can summarize:
+
+repeating mistakes
+risk concentration
+execution consistency
+successful setups
+
+AI should use only actual journal data.
+
+================================================================================
+219. SOCIAL FOLLOW SYSTEM
+================================================================================
+
+Users can follow:
+
+traders
+wallets
+topics
+news categories
+
+Follow actions generate personalized feed.
+
+================================================================================
+220. SOCIAL FEED
+================================================================================
+
+Feed may include:
+
+verified trader updates
+public wallet activity
+market events
+news
+forecast changes
+community content
+
+Every item must have source/status.
+
+================================================================================
+221. VERIFIED DATA BADGE
+================================================================================
+
+Badges:
+
+VERIFIED
+SOURCE VERIFIED
+SIMULATED
+EXTERNAL
+UNVERIFIED
+
+Badges must be visually distinct.
+
+================================================================================
+222. DATA CONFIDENCE
+================================================================================
+
+Where meaningful:
+
+HIGH
+MEDIUM
+LOW
+
+This refers to data quality/availability, not price prediction certainty.
+
+================================================================================
+223. SOURCE PANEL
+================================================================================
+
+Each major intelligence item should allow:
+
+"View sources"
+
+Display:
+
+source
+timestamp
+data provider
+original link where allowed
+
+================================================================================
+224. RESEARCH PAGE
+================================================================================
+
+Create research hub.
+
+Sections:
+
+Market
+XRPL
+Historical
+Future
+AI
+News
+Social
+Trade Lab
+
+================================================================================
+225. MARKET RESEARCH
+================================================================================
+
+Research reports can combine:
+
+market data
+XRPL data
+historical statistics
+news
+scenarios
+
+AI may generate narrative.
+
+Numbers remain deterministic.
+
+================================================================================
+226. WALLET RESEARCH
+================================================================================
+
+Public wallet research report:
+
+identity/label
+balance
+activity
+flows
+historical behavior
+risk signals
+
+================================================================================
+227. ENTITY RESEARCH
+================================================================================
+
+Research known entities.
+
+Display:
+
+activity
+wallets
+transactions
+flows
+news
+
+Only verified relationships should be presented as factual.
+
+================================================================================
+228. SHAREABLE RESEARCH
+================================================================================
+
+Research pages can generate public links.
+
+Sensitive user data remains private.
+
+================================================================================
+229. PUBLIC WALLET PROFILE
+================================================================================
+
+Public wallet profile may include:
+
+address
+balance
+activity
+labels
+analytics
+
+Only public blockchain information.
+
+================================================================================
+230. PUBLIC TRADER PROFILE
+================================================================================
+
+Public trader profile only with explicit trader consent.
+
+================================================================================
+231. SOCIAL PROFILE PRIVACY
+================================================================================
+
+Users can choose:
+
+public
+followers
+private
+
+Default should protect privacy.
+
+================================================================================
+232. USER EXPERIENCE CONSISTENCY
+================================================================================
+
+Buttons:
+
+consistent sizes
+
+Cards:
+
+consistent spacing
+
+Charts:
+
+consistent controls
+
+Tables:
+
+consistent density
+
+No random component styles.
+
+================================================================================
+233. COMPONENT LIBRARY
+================================================================================
+
+Create reusable:
+
+Button
+Card
+MetricCard
+ChartCard
+Table
+Badge
+Modal
+Drawer
+Tabs
+Tooltip
+Dropdown
+DatePicker
+CommandPalette
+Alert
+Toast
+Skeleton
+EmptyState
+ErrorState
+DataFreshness
+SourceBadge
+
+================================================================================
+234. CHART COMPONENTS
+================================================================================
+
+Reusable:
+
+LineChart
+AreaChart
+BarChart
+CandlestickChart
+VolumeChart
+DrawdownChart
+CorrelationChart
+DistributionChart
+ScenarioChart
+EquityChart
+
+================================================================================
+235. TABLE COMPONENTS
+================================================================================
+
+Features:
+
+sorting
+filtering
+pagination
+column visibility
+responsive behavior
+CSV export where appropriate
+
+================================================================================
+236. ADMIN UI
+================================================================================
+
+Admin navigation:
+
+Overview
+Users
+Revenue
+Subscriptions
+Providers
+Jobs
+Errors
+AI
+Forecasts
+Moderation
+Audit
+System
+
+================================================================================
+237. SYSTEM HEALTH
+================================================================================
+
+Show:
+
+database
+API
+market providers
+XRPL provider
+news provider
+AI provider
+queue
+cron
+storage
+
+================================================================================
+238. JOB MONITORING
+================================================================================
+
+Each job:
+
+last run
+next run
+duration
+status
+error count
+
+Allow retry for safe jobs.
+
+================================================================================
+239. AI USAGE MONITORING
+================================================================================
+
+Admin:
+
+tokens
+requests
+cost estimate
+top features
+errors
+latency
+
+Do not expose private prompt content unnecessarily.
+
+================================================================================
+240. PROVIDER COST CONTROL
+================================================================================
+
+Track:
+
+requests
+cost
+rate limits
+
+Prefer cached data where possible.
+
+================================================================================
+241. FEATURE FLAGS
+================================================================================
+
+Use feature flags for:
+
+experimental forecasts
+new providers
+new Trade Lab functions
+future live bridge
+beta social features
+
+================================================================================
+242. BETA FEATURES
+================================================================================
+
+Clearly mark:
+
+BETA
+
+Never silently activate risky features.
+
+================================================================================
+243. MOBILE TRADE LAB
+================================================================================
+
+Mobile Trade Lab:
+
+- chart
+- buy/sell simulation
+- order ticket
+- positions
+- P&L
+- open orders
+- journal
+
+Must remain usable on small screens.
+
+================================================================================
+244. MOBILE XRPL
+================================================================================
+
+Mobile explorer:
+
+search
+transaction
+wallet
+activity
+
+Fast and readable.
+
+================================================================================
+245. MOBILE DASHBOARD
+================================================================================
+
+Prioritize:
+
+XRP price
+portfolio
+alerts
+AI brief
+market regime
+wallet activity
+
+================================================================================
+246. MOBILE NAVIGATION
+================================================================================
+
+Primary:
+
+Home
+Market
+XRPL
+Portfolio
+Trade Lab
+
+Secondary in menu:
+
+AI
+Future
+Social
+News
+Research
+Alerts
+Calculators
+Settings
+
+================================================================================
+247. DESKTOP NAVIGATION
+================================================================================
+
+Primary navigation:
+
+Dashboard
+Market
+XRPL
+Portfolio
+Historical
+Future
+AI
+News
+Social
+Trade Lab
+
+Secondary:
+
+Alerts
+Calculators
+Research
+Settings
+Admin
+
+================================================================================
+248. COMMAND CENTER
+================================================================================
+
+Dashboard should behave like a command center.
+
+At a glance:
+
+price
+market state
+portfolio
+XRPL
+news
+AI
+future
+alerts
+Trade Lab
+
+================================================================================
+249. QUICK ACTIONS
+================================================================================
+
+Dashboard quick actions:
+
+Connect Wallet
+Add Exchange
+Open Trade Lab
+Search Wallet
+Set Alert
+Run Calculator
+View Future
+Open AI Brief
+
+================================================================================
+250. ONBOARDING DEMO
+================================================================================
+
+New users should see a guided tour.
+
+Highlight:
+
+Dashboard
+Market
+XRPL
+Portfolio
+Future
+Trade Lab
+
+Allow skip.
+
+================================================================================
+251. TOOLTIP SYSTEM
+================================================================================
+
+Technical concepts have tooltips.
+
+Examples:
+
+market regime
+drawdown
+volatility
+correlation
+profit factor
+slippage
+forecast coverage
+
+================================================================================
+252. EDUCATIONAL MICROCOPY
+================================================================================
+
+Explain advanced concepts without making UI overwhelming.
+
+================================================================================
+253. FINANCIAL NUMBER FORMATTING
+================================================================================
+
+Use appropriate:
+
+decimal precision
+thousands separators
+currency
+percentages
+
+Do not round away important small values.
+
+================================================================================
+254. XRP AMOUNT FORMATTING
+================================================================================
+
+Small amounts need sufficient precision.
+
+Large amounts can use compact notation with tooltip exact value.
+
+================================================================================
+255. TRANSACTION HASH DISPLAY
+================================================================================
+
+Show shortened hash:
+
+ABC123...XYZ789
+
+Copy button.
+
+Full value in tooltip/modal.
+
+================================================================================
+256. WALLET ADDRESS DISPLAY
+================================================================================
+
+Same.
+
+Copy button.
+
+QR code optional.
+
+================================================================================
+257. SECURITY NOTIFICATIONS
+================================================================================
+
+Notify user about:
+
+new login
+password change
+connected account change
+API connection
+account deletion request
+
+================================================================================
+258. LOGIN SECURITY
+================================================================================
+
+Support:
+
+session expiration
+device/session management
+optional 2FA architecture
+brute force protection
+
+================================================================================
+259. ADMIN SECURITY
+================================================================================
+
+Admin routes require stronger authorization.
+
+Never trust frontend admin flag.
+
+Server must validate role.
+
+================================================================================
+260. DATABASE MIGRATIONS
+================================================================================
+
+Every schema change via migration.
+
+No manual production-only database changes.
+
+================================================================================
+261. SEED DATA
+================================================================================
+
+Development seed data is allowed.
+
+Production must not contain fake users or fake market data.
+
+Development data must be clearly isolated.
+
+================================================================================
+262. TESTING
+================================================================================
+
+Implement:
+
+unit tests
+integration tests
+API tests
+database tests
+RLS tests
+UI tests
+financial calculation tests
+paper trading tests
+forecast integrity tests
+backtest leakage tests
+
+================================================================================
+263. FINANCIAL CALCULATION TESTS
+================================================================================
+
+Test:
+
+P&L
+fees
+slippage
+drawdown
+position sizing
+risk
+portfolio allocation
+cost basis
+
+Use deterministic fixtures.
+
+================================================================================
+264. PAPER TRADING TESTS
+================================================================================
+
+Test:
+
+market orders
+limit orders
+stop orders
+stop-limit
+SL
+TP
+partial fills
+cancellation
+fees
+slippage
+insufficient balance
+drawdown
+reset
+
+================================================================================
+265. FORECAST TESTS
+================================================================================
+
+Test:
+
+immutable forecast
+versioning
+actual evaluation
+metrics
+baseline
+walk-forward
+no leakage
+
+================================================================================
+266. TRADE LAB — FULL PAPER TRADING ENGINE
+================================================================================
+
+TRADE LAB is a core product module and must be implemented as a real
+simulation engine, not as static UI.
+
+The engine must use real/current market data wherever available while keeping
+all account balances and executions virtual.
+
+Demo capital options:
+
+$10,000
+$50,000
+$100,000
+$250,000
+$1,000,000
+
+Default:
+
+$100,000
+
+Supported orders:
+
+MARKET
+LIMIT
+STOP
+STOP-LIMIT
+
+Supported risk tools:
+
+STOP LOSS
+TAKE PROFIT
+POSITION SIZING
+RISK PER TRADE
+RISK/REWARD
+MAX DRAWDOWN
+DAILY LOSS LIMIT
+
+Required pages:
+
+Trade Lab Overview
+Order Ticket
+Positions
+Open Orders
+Order History
+Fills
+Performance
+Equity Curve
+Drawdown
+Trade Journal
+Historical Replay
+Strategy Lab
+Challenges
+Trading Academy
+
+All Trade Lab pages must display a visible:
+
+SIMULATED / DEMO
+
+indicator.
+
+The system must never imply that simulated execution is real execution.
+
+================================================================================
+267. TRADE LAB ACCOUNT ENGINE
+================================================================================
+
+Each user may create paper accounts.
+
+Paper account:
+
+id
+user_id
+name
+starting_capital
+cash_balance
+equity
+created_at
+updated_at
+status
+
+Account state must be derived from immutable simulation events where possible.
+
+================================================================================
+268. PAPER LEDGER
+================================================================================
+
+Every simulated financial event must be recorded.
+
+Events:
+
+ACCOUNT_CREATED
+VIRTUAL_CAPITAL_ASSIGNED
+ORDER_CREATED
+ORDER_TRIGGERED
+ORDER_FILLED
+ORDER_CANCELLED
+FEE_CHARGED
+POSITION_OPENED
+POSITION_UPDATED
+POSITION_CLOSED
+REALIZED_PNL
+ACCOUNT_RESET
+
+No invisible balance modifications.
+
+================================================================================
+269. PAPER ORDER BOOK
+================================================================================
+
+Track:
+
+open orders
+trigger prices
+limit prices
+remaining quantity
+filled quantity
+average fill
+status
+
+================================================================================
+270. REAL-TIME SIMULATION LOOP
+================================================================================
+
+When market data updates:
+
+1. receive market update
+2. update price
+3. evaluate open orders
+4. trigger eligible orders
+5. simulate fills
+6. calculate fees
+7. update positions
+8. update equity
+9. evaluate stop/TP
+10. evaluate risk limits
+11. record events
+12. update UI
+
+================================================================================
+271. ORDER FILL ENGINE
+================================================================================
+
+Fill price should be based on:
+
+market snapshot
+order type
+slippage model
+available data
+
+Never use future price.
+
+================================================================================
+272. SLIPPAGE MODEL
+================================================================================
+
+Minimum implementation:
+
+fixed configurable basis points.
+
+Advanced:
+
+volatility-adjusted
+size-adjusted
+liquidity-adjusted
+
+The model and assumptions must be visible.
+
+================================================================================
+273. SIMULATED FEES
+================================================================================
+
+Fee must be calculated on each fill.
+
+Display:
+
+gross value
+fee
+net value
+
+================================================================================
+274. POSITION P&L
+================================================================================
+
+Use deterministic formulas.
+
+Long position:
+
+unrealized P&L =
+(current price - average entry) * quantity
+
+Short positions only if explicitly supported.
+
+Initial implementation may remain long-only if architecture requires it.
+
+================================================================================
+275. EQUITY CURVE
+================================================================================
+
+Chart:
+
+timestamp
+cash
+positions
+equity
+
+Benchmark:
+
+buy-and-hold XRP.
+
+================================================================================
+276. MAX DRAWDOWN
+================================================================================
+
+Calculate from equity curve.
+
+Show:
+
+peak
+trough
+recovery
+duration
+
+================================================================================
+277. TRADE STATISTICS
+================================================================================
+
+Calculate:
+
+total trades
+winning trades
+losing trades
+win rate
+average win
+average loss
+profit factor
+largest win
+largest loss
+average holding time
+net P&L
+return
+max drawdown
+
+================================================================================
+278. R-MULTIPLE
+================================================================================
+
+Where stop-based risk exists:
+
+R multiple =
+realized result / initial risk
+
+Track per trade.
+
+================================================================================
+279. STRATEGY SCORECARD
+================================================================================
+
+Show:
+
+strategy return
+benchmark return
+drawdown
+profit factor
+win rate
+trade count
+consistency
+
+Do not assign a single "best" score.
+
+================================================================================
+280. HISTORICAL REPLAY ENGINE
+================================================================================
+
+Replay uses historical candles.
+
+At replay timestamp T:
+
+Only data <= T is available.
+
+Future candles remain hidden.
+
+================================================================================
+281. REPLAY ORDER EXECUTION
+================================================================================
+
+Orders behave as they would in the replay timeline.
+
+No future candle information.
+
+================================================================================
+282. REPLAY CHART
+================================================================================
+
+Chart shows:
+
+current historical candle
+past candles
+indicators calculated only from available past data
+
+Future candles hidden.
+
+================================================================================
+283. REPLAY SESSION SAVE
+================================================================================
+
+Save:
+
+session name
+market
+date range
+starting capital
+strategy
+trades
+performance
+notes
+
+================================================================================
+284. STRATEGY LAB CONDITION BUILDER
+================================================================================
+
+Visual rule builder.
+
+Example:
+
+IF
+RSI < 30
+AND
+price > EMA 200
+THEN
+BUY
+
+EXIT:
+
+RSI > 60
+
+STOP:
+
+2%
+
+TAKE PROFIT:
+
+5%
+
+================================================================================
+285. STRATEGY LAB DATA SOURCES
+================================================================================
+
+Supported conditions:
+
+price
+volume
+RSI
+MACD
+SMA
+EMA
+ATR
+volatility
+market regime
+XRP/BTC
+XRP/ETH
+support zones
+historical metrics
+
+Only where data quality supports them.
+
+================================================================================
+286. STRATEGY BACKTEST ENGINE
+================================================================================
+
+Run strategy across historical period.
+
+Output:
+
+trades
+return
+P&L
+drawdown
+win rate
+profit factor
+benchmark
+equity curve
+
+================================================================================
+287. STRATEGY OVERFITTING WARNING
+================================================================================
+
+If strategy appears highly optimized:
+
+display warning.
+
+Explain:
+
+Past optimization does not guarantee future performance.
+
+================================================================================
+288. TRADING CHALLENGES
+================================================================================
+
+Examples:
+
+Risk Management Challenge
+Historical Replay Challenge
+30-Day Discipline Challenge
+Low Drawdown Challenge
+
+All simulated.
+
+================================================================================
+289. PAPER LEADERBOARD SAFETY
+================================================================================
+
+Leaderboard must show:
+
+SIMULATED.
+
+Do not allow:
+
+"guaranteed profitable trader"
+
+or similar claims.
+
+================================================================================
+290. VERIFIED TRADER SIMULATION
+================================================================================
+
+A user may create a simulated portfolio that follows public activity of a
+verified trader.
+
+No real copying.
+
+The simulation should clearly state:
+
+"Hypothetical simulation based on publicly available trader activity."
+
+================================================================================
+291. AI TRADE COACH
+================================================================================
+
+AI Coach inputs:
+
+completed trades
+journal
+market regime
+risk
+performance
+
+Outputs:
+
+patterns
+mistakes
+strengths
+consistency
+risk concentration
+questions for review
+
+No direct future trade instruction.
+
+================================================================================
+292. TRADING ACADEMY STRUCTURE
+================================================================================
+
+Modules:
+
+1. What is XRP?
+2. What is XRPL?
+3. Market basics
+4. Candlesticks
+5. Market/Limit/Stop orders
+6. Risk management
+7. Position sizing
+8. Technical indicators
+9. On-chain analysis
+10. Historical analysis
+11. Backtesting
+12. Paper trading
+13. Strategy design
+14. Trading journal
+15. Common mistakes
+
+================================================================================
+293. TRADE LAB USER JOURNEY
+================================================================================
+
+New user:
+
+Open Trade Lab
+→ choose demo capital
+→ see market
+→ create order
+→ order fills
+→ position appears
+→ P&L updates
+→ close position
+→ journal trade
+→ review performance
+→ compare against buy-and-hold
+→ optionally replay historical market
+→ build strategy
+
+================================================================================
+294. REAL TRADING FUTURE ARCHITECTURE
+================================================================================
+
+Architecture should allow future integration with regulated/supported
+execution providers.
+
+But:
+
+NO REAL EXECUTION IN CURRENT MVP.
+
+All live-trading code should remain disabled unless separately implemented,
+tested and legally reviewed.
+
+================================================================================
+295. TRADING DATA SAFETY
+================================================================================
+
+Trade Lab data must never be mixed with real portfolio data.
+
+Separate:
+
+PAPER
+REAL
+
+Even if future live accounts exist.
+
+================================================================================
+296. SOCIAL / TRADE LAB INTEGRATION
+================================================================================
+
+Users may share:
+
+paper trade
+paper strategy
+replay result
+strategy statistics
+
+All shared results must say:
+
+SIMULATED.
+
+================================================================================
+297. PAPER PERFORMANCE DISCLAIMER
+================================================================================
+
+Display:
+
+"Past simulated performance does not guarantee future results. Paper trading
+does not reproduce every condition of live markets."
+
+================================================================================
+298. API ARCHITECTURE
+================================================================================
+
+Prepare internal API.
+
+Routes grouped:
+
+/api/auth
+/api/user
+/api/market
+/api/xrpl
+/api/wallets
+/api/portfolio
+/api/news
+/api/ai
+/api/forecast
+/api/social
+/api/traders
+/api/tradelab
+/api/replay
+/api/strategies
+/api/alerts
+/api/admin
+
+================================================================================
+299. API VALIDATION
+================================================================================
+
+Validate every request.
+
+Use schemas.
+
+Reject malformed:
+
+wallet
+transaction hash
+numbers
+dates
+order parameters
+
+================================================================================
+300. API AUTHORIZATION
+================================================================================
+
+Every protected route verifies:
+
+authenticated user
+resource ownership
+plan entitlement
+admin role where required
+
+================================================================================
+301. PUBLIC API FUTURE
+================================================================================
+
+Future commercial API.
+
+Potential:
+
+market data
+XRPL analytics
+wallet analytics
+historical data
+forecast data
+
+API keys.
+
+Usage limits.
+
+Billing.
+
+Documentation.
+
+================================================================================
+302. B2B
+================================================================================
+
+Future B2B offering.
+
+Possible:
+
+API
+analytics feeds
+custom dashboards
+white-label
+data exports
+
+================================================================================
+303. WHITE-LABEL
+================================================================================
+
+Future.
+
+Allow organizations to use XRP Terminal technology under their own branding.
+
+Architecture should isolate:
+
+tenant
+users
+branding
+data
+permissions
+
+================================================================================
+304. MULTI-ASSET ARCHITECTURE
+================================================================================
+
+Although XRP-native, architecture should allow future assets.
+
+Asset object:
+
+id
+symbol
+name
+network
+contract/address where relevant
+metadata
+
+Do not let XRP-specific assumptions contaminate every component.
+
+================================================================================
+305. XRP-FIRST UX
+================================================================================
+
+Despite multi-asset readiness:
+
+XRP remains primary.
+
+Default asset:
+
+XRP
+
+Default market:
+
+XRP/USD
+
+XRPL remains primary chain.
+
+================================================================================
+306. DATA PROVIDER FALLBACK
+================================================================================
+
+If provider A fails:
+
+try provider B where safe.
+
+Never combine inconsistent data silently.
+
+If sources conflict:
+
+show discrepancy or select documented priority.
+
+================================================================================
+307. MARKET DATA RECONCILIATION
+================================================================================
+
+For multiple sources:
+
+compare:
+
+price
+volume
+timestamp
+
+Use source priority.
+
+Store raw source data where licensing allows.
+
+================================================================================
+308. XRPL PROVIDER ABSTRACTION
+================================================================================
+
+Support:
+
+WebSocket
+JSON-RPC
+XRPL API/provider
+
+Architecture should allow provider switch.
+
+================================================================================
+309. RETRY POLICY
+================================================================================
+
+Transient errors:
+
+retry with exponential backoff.
+
+Do not endlessly retry.
+
+Use dead-letter or failed-job state where appropriate.
+
+================================================================================
+310. SYSTEM RECOVERY
+================================================================================
+
+Implement:
+
+database backups
+configuration backups
+migration history
+job recovery
+provider recovery
+
+================================================================================
+311. DISASTER RECOVERY
+================================================================================
+
+Document:
+
+backup frequency
+restore process
+RPO
+RTO
+
+Exact targets can be selected according to infrastructure.
+
+================================================================================
+312. DEPLOYMENT
+================================================================================
+
+Production environment must include:
+
+frontend
+backend/server functions
+database
+cron/queue
+provider configuration
+monitoring
+
+Use environment-specific configuration.
+
+================================================================================
+313. DEVELOPMENT / STAGING / PRODUCTION
+================================================================================
+
+Separate:
+
+development
+staging
+production
+
+Never test destructive migrations directly in production.
+
+================================================================================
+314. CI/CD
+================================================================================
+
+Pipeline:
+
+lint
+typecheck
+unit tests
+integration tests
+build
+security checks
+deploy
+
+Failed tests should block deployment where appropriate.
+
+================================================================================
+315. TYPE SAFETY
+================================================================================
+
+Use strict TypeScript where TypeScript is used.
+
+Avoid:
+
+any
+
+unless justified.
+
+Shared types for:
+
+market
+wallet
+portfolio
+forecast
+paper trading
+orders
+trades
+
+================================================================================
+316. FINANCIAL PRECISION
+================================================================================
+
+Do not use unsafe floating point calculations for financial balances where
+precision matters.
+
+Use decimal-safe calculations.
+
+Store appropriate precision in database.
+
+================================================================================
+317. TIME PRECISION
+================================================================================
+
+Use UTC timestamps.
+
+Avoid local-time arithmetic in backend calculations.
+
+================================================================================
+318. FRONTEND STATE
+================================================================================
+
+Separate:
+
+server state
+UI state
+user preferences
+real-time state
+
+Avoid unnecessary global state.
+
+================================================================================
+319. REAL-TIME UI
+================================================================================
+
+Use subscriptions/websockets where justified.
+
+Unsubscribe correctly.
+
+Avoid memory leaks.
+
+================================================================================
+320. CHART PERFORMANCE
+================================================================================
+
+Large historical datasets:
+
+aggregate/downsample appropriately.
+
+Do not send millions of points to mobile unnecessarily.
+
+================================================================================
+321. TABLE PERFORMANCE
+================================================================================
+
+Use pagination/virtualization for large datasets.
+
+================================================================================
+322. SECURITY TESTING
+================================================================================
+
+Test:
+
+RLS bypass
+IDOR
+authorization
+XSS
+CSRF where relevant
+SQL injection
+API abuse
+rate limiting
+secret leakage
+session security
+
+================================================================================
+323. PROMPT SECURITY
+================================================================================
+
+AI prompts must not allow:
+
+user input
+news content
+wallet labels
+social content
+
+to override system instructions.
+
+================================================================================
+324. USER CONTENT SECURITY
+================================================================================
+
+Sanitize:
+
+social posts
+journal
+profile
+display name
+comments
+
+================================================================================
+325. FILE SECURITY
+================================================================================
+
+Uploaded files, if implemented:
+
+validate MIME
+validate size
+scan where appropriate
+store outside executable paths
+restrict access
+
+================================================================================
+326. OBSERVABILITY DASHBOARD
+================================================================================
+
+Admin should see:
+
+system uptime
+provider status
+queue
+jobs
+errors
+API latency
+AI usage
+database health
+
+================================================================================
+327. PRODUCT ANALYTICS
+================================================================================
+
+Track product events:
+
+signup
+onboarding_complete
+wallet_connected
+portfolio_view
+future_view
+trade_lab_started
+paper_trade
+strategy_created
+alert_created
+subscription_started
+subscription_cancelled
+
+Do not collect unnecessary sensitive data.
+
+================================================================================
+328. PRODUCT FUNNEL
+================================================================================
+
+Analyze:
+
+visitor
+signup
+activation
+wallet connection
+Trade Lab use
+subscription
+retention
+
+================================================================================
+329. USER ACTIVATION
+================================================================================
+
+Potential activation definition:
+
+User completes at least one meaningful action.
+
+Examples:
+
+connect wallet
+view wallet intelligence
+create alert
+execute paper trade
+run historical analysis
+
+================================================================================
+330. RETENTION
+================================================================================
+
+Track:
+
+DAU
+WAU
+MAU
+return users
+feature retention
+
+================================================================================
+331. MONETIZATION EXPANSION
+================================================================================
+
+Future:
+
+Pro
+Pro+
+API
+B2B
+white-label
+premium reports
+affiliate revenue
+
+Do not overload initial product with too many paid walls.
+
+================================================================================
+332. AFFILIATE DISCLOSURE
+================================================================================
+
+If affiliate links are used:
+
+clearly disclose affiliate relationship.
+
+Never present affiliate promotion as neutral research.
+
+================================================================================
+333. GROWTH
+================================================================================
+
+Organic growth mechanisms:
+
+public wallet pages
+public trader profiles
+research pages
+share cards
+SEO
+academy
+referral
+affiliate
+
+================================================================================
+334. VIRAL LOOP
+================================================================================
+
+Potential loop:
+
+User creates analysis
+→ share card
+→ visitor opens XRP Terminal
+→ explores public data
+→ creates account
+→ uses platform
+→ shares own analysis
+
+================================================================================
+335. QUALITY BAR
+================================================================================
+
+A feature is NOT complete when:
+
+button exists
+page renders
+mock data appears
+
+A feature is complete only when:
+
+database
+backend
+frontend
+validation
+security
+error handling
+loading
+empty state
+real data
+permissions
+testing
+logging
+
+are implemented appropriately.
+
+================================================================================
+336. NO FAKE COMPLETION
+================================================================================
+
+Never say:
+
+"implemented"
+
+if only frontend exists.
+
+Never say:
+
+"real-time"
+
+if data is static.
+
+Never say:
+
+"AI forecast"
+
+if it is hard-coded.
+
+Never say:
+
+"verified trader"
+
+if verification is absent.
+
+Never say:
+
+"live"
+
+if data is stale.
+
+================================================================================
+337. NO FAKE DATA
+================================================================================
+
+Production must not contain:
+
+fake XRP transactions
+fake wallets
+fake trader results
+fake users
+fake news
+fake forecasts
+fake market prices
+
+Development fixtures must be clearly isolated.
+
+================================================================================
+338. TRANSPARENT PLACEHOLDERS
+================================================================================
+
+If provider integration is unavailable:
+
+show:
+
+"Data source not connected."
+
+Do not silently replace with invented numbers.
+
+================================================================================
+339. FEATURE STATUS
+================================================================================
+
+Admin/internal feature status:
+
+PLANNED
+IN DEVELOPMENT
+BETA
+LIVE
+DISABLED
+
+User-facing product should only expose appropriate statuses.
+
+================================================================================
+340. FINAL PRODUCT NAVIGATION
+================================================================================
+
+MAIN:
+
+Dashboard
+Market
+XRPL
+Portfolio
+Historical
+Future
+AI
+News
+Social
+Trade Lab
+
+SECONDARY:
+
+Alerts
+Calculators
+Research
+Academy
+Settings
+
+ADMIN:
+
+Overview
+Users
+Revenue
+Providers
+Jobs
+AI
+Forecasts
+Moderation
+Audit
+System
+
+================================================================================
+341. FINAL PRODUCT LOOPS
+================================================================================
+
+LOOP 1:
+
+Market
+→ Historical
+→ Future
+→ Alerts
+
+LOOP 2:
+
+Wallet
+→ XRPL intelligence
+→ Portfolio
+→ Alerts
+
+LOOP 3:
+
+Trade Lab
+→ Journal
+→ Performance
+→ Strategy Lab
+→ Replay
+
+LOOP 4:
+
+News
+→ Claim Check
+→ AI
+→ Future scenarios
+
+LOOP 5:
+
+Verified Trader
+→ Profile
+→ Follow
+→ Simulated Mimic
+→ Trade Lab
+
+================================================================================
+342. CORE MOAT
+================================================================================
+
+Potential long-term moat:
+
+XRP-specific historical dataset
+XRPL wallet intelligence
+behavioral analytics
+forecast history
+forecast-vs-actual dataset
+paper trading dataset
+strategy/replay dataset
+verified trader performance
+AI research layer
+claim verification
+data provenance
+
+The product should accumulate structured proprietary analytics over time.
+
+================================================================================
+343. DATA MOAT
+================================================================================
+
+Store historical normalized intelligence.
+
+Do not only display raw provider data.
+
+Transform data into:
+
+signals
+statistics
+relationships
+historical comparisons
+behavioral profiles
+forecast evaluation
+
+================================================================================
+344. FORECAST MOAT
+================================================================================
+
+Every forecast becomes a future evaluation opportunity.
+
+Over time:
+
+forecast
+→ actual
+→ error
+→ model evaluation
+→ model improvement
+
+This creates a measurable forecast history.
+
+================================================================================
+345. TRADE LAB MOAT
+================================================================================
+
+Trade Lab creates structured behavioral data:
+
+strategies
+risk
+entries
+exits
+mistakes
+journal
+replay
+
+This can improve educational and analytical functionality.
+
+================================================================================
+346. FINAL SECURITY PRINCIPLES
+================================================================================
+
+Never:
+
+store seed phrases
+store private keys
+store withdrawal credentials
+execute real transactions
+expose secrets
+expose private portfolios
+mix private and public data
+trust client-side authorization
+trust AI numerical calculations
+trust external text as instructions
+
+================================================================================
+347. FINAL UX PRINCIPLES
+================================================================================
+
+The product must feel:
+
+FAST
+PRECISE
+CALM
+PREMIUM
+DATA-DENSE
+TRUSTWORTHY
+MODERN
+
+Every screen should answer:
+
+What am I looking at?
+
+Why does it matter?
+
+Where did this data come from?
+
+How fresh is it?
+
+What does it mean?
+
+What is uncertain?
+
+================================================================================
+348. FINAL COMMERCIAL PRODUCT CHECKLIST
+================================================================================
+
+Before launch verify:
+
+[ ] Domain configured
+[ ] SSL
+[ ] Authentication
+[ ] Database
+[ ] RLS
+[ ] Market data
+[ ] XRPL data
+[ ] Wallet lookup
+[ ] Portfolio
+[ ] Historical intelligence
+[ ] Future intelligence
+[ ] Forecast engine
+[ ] Forecast history
+[ ] AI
+[ ] News
+[ ] Claim Check
+[ ] Alerts
+[ ] Social Intelligence
+[ ] Verified Traders
+[ ] Trade Lab
+[ ] Historical Replay
+[ ] Strategy Lab
+[ ] Trading Journal
+[ ] Academy
+[ ] Stripe
+[ ] Entitlements
+[ ] Admin
+[ ] Affiliate
+[ ] Data provenance
+[ ] Monitoring
+[ ] Error handling
+[ ] Tests
+[ ] Security audit
+[ ] Legal pages
+[ ] Privacy
+[ ] Terms
+[ ] Risk disclosure
+[ ] Mobile
+[ ] SEO
+[ ] Accessibility
+[ ] Backups
+[ ] Disaster recovery
+
+================================================================================
+349. FINAL CODING AGENT COMMAND
+================================================================================
+
+BUILD XRP TERMINAL AS A COMPLETE, PRODUCTION-GRADE, COMMERCIAL XRP-NATIVE
+INTELLIGENCE PLATFORM.
+
+Do not build a prototype.
+
+Do not build a fake dashboard.
+
+Do not use fake production data.
+
+Do not use hard-coded fake users.
+
+Do not use hard-coded fake wallet activity.
+
+Do not use hard-coded fake forecasts.
+
+Do not use fake trader performance.
+
+Do not simulate functionality with buttons that do nothing.
+
+Implement the actual product architecture.
+
+Use real data providers wherever possible.
+
+Use provider abstractions so providers can be changed later.
+
+Use a secure PostgreSQL/Supabase architecture.
+
+Implement proper authentication.
+
+Implement proper authorization.
+
+Implement RLS.
+
+Implement secure server-side secrets.
+
+Implement Stripe subscriptions and server-side entitlement validation.
+
+Implement real XRP/XRPL market and ledger intelligence where provider access
+allows.
+
+Implement public wallet analytics.
+
+Implement portfolio tracking.
+
+Implement historical intelligence.
+
+Implement normalized cycle analysis.
+
+Implement historical analogues.
+
+Implement volatility, drawdown, correlation and regime analytics.
+
+Implement Future Intelligence with scenario ranges rather than guaranteed
+single-price predictions.
+
+Implement immutable forecast history.
+
+Implement model versioning.
+
+Implement walk-forward evaluation.
+
+Implement simple benchmark models.
+
+Implement forecast-vs-actual tracking.
+
+Implement model performance metrics.
+
+Implement AI Intelligence with source-aware structured responses.
+
+Implement Claim Check.
+
+Implement News Intelligence.
+
+Implement Social Intelligence.
+
+Implement verified trader profiles.
+
+Implement trader verification.
+
+Implement trader privacy.
+
+Implement simulated mimic functionality only.
+
+Implement alerts.
+
+Implement calculators.
+
+Implement share cards.
+
+Implement a complete Trade Lab.
+
+Trade Lab must include:
+
+- virtual accounts
+- starting capital options
+- real/current market data
+- market orders
+- limit orders
+- stop orders
+- stop-limit orders
+- stop-loss
+- take-profit
+- fees
+- slippage
+- positions
+- open orders
+- fills
+- P&L
+- equity
+- drawdown
+- risk management
+- position sizing
+- trading journal
+- trade review
+- performance metrics
+- buy-and-hold benchmark
+- AI Trade Coach
+- Historical Replay
+- Strategy Lab
+- backtesting
+- challenges
+- simulated leaderboard
+- Trading Academy
+
+Trade Lab must be completely separated from real trading.
+
+Do not implement real trade execution in the MVP.
+
+Do not implement deposits.
+
+Do not implement withdrawals.
+
+Do not implement custody.
+
+Do not request or store seed phrases.
+
+Do not request or store private keys.
+
+Read-only exchange integrations only.
+
+All simulation must be explicitly labeled.
+
+All financial calculations must be deterministic and implemented in code.
+
+AI must explain data and calculations but must not become the numerical source
+of truth.
+
+AI must never invent facts, prices, transactions, sources, forecasts or
+statistics.
+
+Every important data point must have provenance.
+
+Every important external claim must have a source.
+
+Every forecast must contain uncertainty and limitations.
+
+Every forecast must be versioned.
+
+Every historical backtest must prevent lookahead bias.
+
+Every strategy must use only information available at the historical point
+being simulated.
+
+Every paper trade must be recorded in an immutable simulation ledger.
+
+Every user must only access their own private data.
+
+Public XRPL data can be publicly accessible.
+
+Public trader data must only appear with explicit trader permission.
+
+Admin functionality must never expose private keys, seed phrases or plaintext
+exchange credentials.
+
+Build the system modularly.
+
+Use reusable components.
+
+Use reusable chart components.
+
+Use reusable data tables.
+
+Use centralized design tokens.
+
+Use responsive design.
+
+Use mobile-first considerations.
+
+Use accessibility best practices.
+
+Use proper loading states.
+
+Use proper empty states.
+
+Use proper error states.
+
+Use stale-data indicators.
+
+Use data freshness indicators.
+
+Use provider health monitoring.
+
+Use queue/retry architecture for background processing.
+
+Use scheduled jobs for intelligence generation and data updates.
+
+Use caching appropriately.
+
+Use observability.
+
+Use backups.
+
+Use disaster recovery procedures.
+
+Use automated testing.
+
+Use unit tests.
+
+Use integration tests.
+
+Use RLS tests.
+
+Use API tests.
+
+Use financial calculation tests.
+
+Use paper trading tests.
+
+Use forecast integrity tests.
+
+Use backtest leakage tests.
+
+Use security testing.
+
+Use CI/CD.
+
+Use development, staging and production separation.
+
+Do not destroy existing working repository functionality.
+
+First inspect the existing repository.
+
+Then inspect the existing database.
+
+Then inspect the existing authentication.
+
+Then inspect existing environment variables.
+
+Then inspect current pages and components.
+
+Then map existing functionality against this specification.
+
+Then create an implementation plan.
+
+Then implement in logical production-grade modules.
+
+Do not rewrite the entire application unnecessarily.
+
+Preserve working components where they are already good.
+
+Refactor only where required.
+
+After implementation, test the entire application.
+
+Fix all errors.
+
+Fix all TypeScript errors.
+
+Fix all database errors.
+
+Fix all API errors.
+
+Fix all broken routes.
+
+Fix all responsive issues.
+
+Fix all security issues discovered during testing.
+
+Fix all obvious UX inconsistencies.
+
+Do not mark the project complete until the implemented functionality actually
+works end-to-end.
+
+The final application must feel like a serious premium fintech/Web3 SaaS
+product.
+
+It must not feel like a template.
+
+It must not feel like a generic AI application.
+
+It must not feel like a meme coin application.
+
+It must not feel like a fake trading platform.
+
+It must feel like:
+
+XRP TERMINAL
+
+SEE BEYOND THE PRICE.
+
+FINAL PRODUCT PRINCIPLE:
+
+DATA FIRST.
+TRANSPARENCY FIRST.
+SECURITY FIRST.
+REAL FUNCTIONALITY FIRST.
+USER TRUST FIRST.
+PROFESSIONAL UX FIRST.
+NO FAKE DATA.
+NO FAKE CLAIMS.
+NO FAKE PERFORMANCE.
+NO GUARANTEED PREDICTIONS.
+NO CUSTODY.
+NO PRIVATE KEYS.
+NO SEED PHRASES.
+NO REAL TRADE EXECUTION IN MVP.
+
+BUILD THE REAL PRODUCT.
+================================================================================
+END OF XRP TERMINAL FINAL EDITION MASTER SPECIFICATION
+================================================================================

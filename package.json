@@ -1,0 +1,53 @@
+{
+  "name": "xrp-terminal",
+  "version": "1.0.0",
+  "description": "XRP Terminal — See beyond the price.",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "license": "UNLICENSED",
+  "dependencies": {
+    "@supabase/ssr": "^0.12.7",
+    "@supabase/supabase-js": "^2.117.2",
+    "clsx": "^2.1.1",
+    "cmdk": "^1.1.1",
+    "decimal.js": "^10.6.0",
+    "fast-xml-parser": "^5.11.1",
+    "framer-motion": "^13.4.4",
+    "geist": "^1.7.2",
+    "lightweight-charts": "^4.2.3",
+    "lucide-react": "^1.48.0",
+    "next": "^15.5.26",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0",
+    "recharts": "^3.10.1",
+    "ripple-address-codec": "^5.0.1",
+    "server-only": "^0.0.1",
+    "stripe": "^22.6.2",
+    "tailwind-merge": "^3.7.0",
+    "zod": "^4.6.5"
+  },
+  "devDependencies": {
+    "@netlify/plugin-nextjs": "^5.16.0",
+    "@types/node": "^26.6.3",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "autoprefixer": "^10.6.1",
+    "eslint": "^9.39.5",
+    "eslint-config-next": "^15.5.26",
+    "postcss": "^8.5.28",
+    "tailwindcss": "^3.4.19",
+    "typescript": "^6.0.3",
+    "vitest": "^5.0.2"
+  },
+  "private": true,
+  "engines": {
+    "node": ">=20"
+  }
+}

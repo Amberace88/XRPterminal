@@ -1,0 +1,137 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+ * XRP Terminal design tokens.
+ * Colors are stored as "R G B" triplets so Tailwind can apply alpha: bg-surface/60.
+ * Never hard-code colors in components — use these tokens.
+ */
+:root,
+[data-theme="dark"] {
+  --background: 8 10 14;
+  --background-secondary: 12 15 20;
+  --surface: 17 21 28;
+  --surface-hover: 23 28 37;
+  --surface-elevated: 26 31 41;
+  --border: 38 45 58;
+  --border-subtle: 27 33 43;
+  --text-primary: 236 240 246;
+  --text-secondary: 160 171 188;
+  --text-muted: 104 115 133;
+  --accent: 46 154 255;
+  --accent-soft: 46 154 255;
+  --accent-strong: 94 196 255;
+  --success: 34 197 139;
+  --warning: 245 176 65;
+  --danger: 244 91 105;
+  --info: 125 170 255;
+  color-scheme: dark;
+}
+
+[data-theme="light"] {
+  --background: 246 248 251;
+  --background-secondary: 238 241 246;
+  --surface: 255 255 255;
+  --surface-hover: 244 246 250;
+  --surface-elevated: 255 255 255;
+  --border: 214 220 230;
+  --border-subtle: 229 233 240;
+  --text-primary: 13 18 28;
+  --text-secondary: 70 82 102;
+  --text-muted: 118 129 148;
+  --accent: 12 110 230;
+  --accent-soft: 12 110 230;
+  --accent-strong: 0 88 200;
+  --success: 5 150 105;
+  --warning: 196 125 10;
+  --danger: 220 50 70;
+  --info: 60 110 220;
+  color-scheme: light;
+}
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+    text-rendering: optimizeLegibility;
+  }
+  body {
+    @apply bg-bg text-fg font-sans antialiased;
+    font-feature-settings: "ss01", "cv11";
+  }
+  ::selection {
+    background: rgb(var(--accent) / 0.3);
+  }
+  :focus-visible {
+    outline: 2px solid rgb(var(--accent));
+    outline-offset: 2px;
+    border-radius: 6px;
+  }
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: rgb(var(--border)) transparent;
+  }
+}
+
+@layer components {
+  .num {
+    font-variant-numeric: tabular-nums;
+    font-feature-settings: "tnum";
+  }
+  .card {
+    @apply rounded-xl border border-border-subtle bg-surface shadow-card;
+  }
+  .card-pad {
+    @apply p-4 sm:p-5;
+  }
+  .label {
+    @apply text-2xs font-medium uppercase tracking-[0.08em] text-fg-muted;
+  }
+  .input {
+    @apply h-10 w-full rounded-lg border border-border bg-bg-secondary px-3 text-sm text-fg placeholder:text-fg-muted outline-none transition focus:border-accent/70 focus:ring-2 focus:ring-accent/20 disabled:opacity-50;
+  }
+  .select {
+    @apply input appearance-none pr-8;
+  }
+  .grid-bg {
+    background-image: linear-gradient(rgb(var(--border-subtle) / 0.55) 1px, transparent 1px),
+      linear-gradient(90deg, rgb(var(--border-subtle) / 0.55) 1px, transparent 1px);
+    background-size: 48px 48px;
+  }
+  .text-gradient {
+    background: linear-gradient(180deg, rgb(var(--text-primary)) 0%, rgb(var(--text-primary) / 0.62) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .accent-gradient {
+    background: linear-gradient(90deg, rgb(var(--accent-strong)) 0%, rgb(var(--accent)) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .prose-legal h2 {
+    @apply mt-8 mb-3 text-lg font-semibold text-fg;
+  }
+  .prose-legal h3 {
+    @apply mt-6 mb-2 font-semibold text-fg;
+  }
+  .prose-legal p,
+  .prose-legal li {
+    @apply text-sm leading-7 text-fg-secondary;
+  }
+  .prose-legal ul {
+    @apply my-3 list-disc pl-5;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
