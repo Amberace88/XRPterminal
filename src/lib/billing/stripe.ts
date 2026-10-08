@@ -18,6 +18,7 @@ export function getStripe(): Stripe | null {
       appInfo: { name: "XRP Terminal", url: "https://xrpterminal.com" },
       maxNetworkRetries: 2,
       timeout: 20_000,
+      httpClient: Stripe.createFetchHttpClient(), // Cloudflare Workers: fetch, not node:https
     });
   }
   return client;
